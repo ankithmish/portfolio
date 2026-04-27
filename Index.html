@@ -32,7 +32,7 @@ section{min-height:100vh;padding:100px 80px 80px;max-width:1100px;margin:0 auto}
 .section-title{font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:40px;color:var(--text)}
 
 /* HERO */
-#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:60px;padding:80px;max-width:1100px;margin:0 auto;position:relative}
+#hero{min-height:100vh;display:flex;align-items:center;padding:80px;position:relative}
 .hero-bg{position:fixed;inset:0;z-index:-1;background:var(--bg);overflow:hidden}
 .blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.18}
 .blob1{width:500px;height:500px;background:var(--gold);top:-100px;right:-100px}
@@ -42,9 +42,9 @@ section{min-height:100vh;padding:100px 80px 80px;max-width:1100px;margin:0 auto}
 .hero-tagline{font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:32px;font-style:italic;border-left:3px solid var(--gold);padding-left:16px}
 .btn{display:inline-block;background:var(--gold);color:#fff;padding:12px 28px;border-radius:var(--radius-sm);font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:.95rem;text-decoration:none;transition:.2s;cursor:pointer;border:none}
 .btn:hover{background:var(--gold-dark);transform:translateY(-1px)}
-.hero-img{display:flex;justify-content:center}
-.hero-img .photo-wrap{width:340px;height:400px;border-radius:24px;overflow:hidden;border:3px solid var(--gold-light);position:relative}
-.hero-img .photo-wrap img{width:100%;height:100%;object-fit:cover}
+.hero-img{display:flex;justify-content:center;align-items:center}
+.hero-img .photo-wrap{width:360px;height:420px;border-radius:24px;overflow:hidden;border:3px solid var(--gold-light);position:relative;box-shadow:0 8px 40px rgba(201,168,76,.15)}
+.hero-img .photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
 .photo-placeholder{width:100%;height:100%;background:linear-gradient(135deg,var(--card),var(--gold-light));display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:.85rem;color:var(--muted);text-align:center;padding:20px}
 
 /* ABOUT */
@@ -185,7 +185,7 @@ section{min-height:100vh;padding:100px 80px 80px;max-width:1100px;margin:0 auto}
 .artist-md{font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:600;color:var(--muted)}
 .artist-sm{font-family:'Plus Jakarta Sans',sans-serif;font-size:.85rem;font-weight:500;color:var(--border)}
 .dot-sep{color:var(--gold);font-size:.6rem}
-.festivals-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:32px}
+.festivals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
 .festival-card{background:var(--text);color:#fff;border-radius:var(--radius-sm);padding:24px;position:relative;overflow:hidden}
 .festival-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold)}
 .festival-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:4px}
@@ -223,7 +223,8 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
 
 /* RESPONSIVE */
 @media(max-width:768px){
-  #hero{grid-template-columns:1fr;padding:60px 24px;gap:40px}
+  #hero section, #hero>div{grid-template-columns:1fr!important}
+  .hero-img{margin-top:32px}
   section{padding:60px 24px}
   .about-grid,.music-layout,.vol-grid,.proj-grid,.tools-grid,.red-flags{grid-template-columns:1fr}
   .art-grid{grid-template-columns:repeat(2,1fr)}
@@ -257,8 +258,8 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
 
 <!-- HERO -->
 <section id="hero" style="padding:80px;max-width:none;margin:0">
-  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
-    <div class="hero-text">
+  <div style="max-width:1100px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center">
+    <div class="hero-text" style="display:flex;flex-direction:column;justify-content:center">
       <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.3rem,2.5vw,2rem);font-weight:700;color:var(--gold);margin-bottom:10px;line-height:1.2;letter-spacing:-.01em">The Story I'm Still Writing</p>
       <h1 style="font-size:clamp(1.5rem,2.8vw,2.2rem);font-weight:600;margin-bottom:6px">Ankit Mishra</h1>
       <p class="title">SaaS Sales Professional &amp; Management Consultant</p>
@@ -268,7 +269,7 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
     <div class="hero-img">
       <div class="photo-wrap">
         <div class="photo-placeholder" style="padding:0;background:none">
-          <img src="./Profile Pictures/IMG_9271.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top center" alt="Ankit Mishra">
+          <img src="profile.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top center" alt="Ankit Mishra">
         </div>
       </div>
     </div>
@@ -763,8 +764,8 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
   <p class="section-title" style="font-size:clamp(2rem,4vw,3rem);margin-bottom:4px">The Frequency</p>
   <p class="section-label" style="margin-bottom:16px;font-size:.85rem">The Soundtrack</p>
   <p style="color:var(--muted);margin-bottom:40px;max-width:600px">I discovered electronic music not as background noise but as an experience - something that happens to your whole body, not just your ears.</p>
-  <div class="music-layout">
-    <div class="vinyl-wrap">
+  <div style="display:flex;flex-direction:column;align-items:center;gap:32px;max-width:500px;margin:0 auto">
+    <div class="vinyl-wrap" style="width:100%">
       <!-- Record Player -->
       <div id="record-player" style="position:relative;width:240px;height:260px;margin:0 auto">
         <!-- Base -->
@@ -798,12 +799,9 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
         Play on Spotify
       </a>
     </div>
-    <div>
-
-    </div>
   </div>
 
-  <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.3rem;font-weight:700;margin:48px 0 8px">Where I've Been &amp; Where I Want To Be</h3>
+  <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.3rem;font-weight:700;margin:48px 0 8px">Music Festivals</h3>
   <p style="color:var(--muted);margin-bottom:24px;font-size:.92rem">There's a particular kind of freedom that only exists in a field at 2am with 50,000 people and a sound system you feel in your chest. If any of these are on your list - <strong>hit me up.</strong></p>
   <div class="festivals-grid">
     <div class="festival-card" style="padding:16px 20px"><div class="festival-name" style="font-size:1rem">Tomorrowland</div><div class="festival-loc" style="margin-bottom:0">Boom, Belgium</div></div>
