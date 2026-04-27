@@ -17,7 +17,7 @@
 html{scroll-behavior:smooth}
 body{background:var(--bg);font-family:'DM Sans',sans-serif;color:var(--text);line-height:1.7}
 h1,h2,h3,h4{font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:-0.02em}
-
+ 
 /* NAV */
 .sidenav{position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:10px;align-items:flex-end}
 .sidenav a{display:flex;align-items:center;gap:8px;text-decoration:none;cursor:pointer}
@@ -25,12 +25,12 @@ h1,h2,h3,h4{font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:-0.02em}
 .sidenav a .label{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:500;color:var(--muted);opacity:0;transition:.3s;white-space:nowrap}
 .sidenav a:hover .dot,.sidenav a.active .dot{background:var(--gold);width:10px;height:10px}
 .sidenav a:hover .label,.sidenav a.active .label{opacity:1}
-
+ 
 /* SECTIONS */
-section{min-height:100vh;padding:100px 80px 80px;max-width:1100px;margin:0 auto}
+section{padding:60px 48px 60px;max-width:1100px;margin:0 auto}
 .section-label{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
 .section-title{font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:40px;color:var(--text)}
-
+ 
 /* HERO */
 #hero{min-height:100vh;display:flex;align-items:center;padding:80px;position:relative}
 .hero-bg{position:fixed;inset:0;z-index:-1;background:var(--bg);overflow:hidden}
@@ -46,7 +46,7 @@ section{min-height:100vh;padding:100px 80px 80px;max-width:1100px;margin:0 auto}
 .hero-img .photo-wrap{width:360px;height:420px;border-radius:24px;overflow:hidden;border:3px solid var(--gold-light);position:relative;box-shadow:0 8px 40px rgba(201,168,76,.15)}
 .hero-img .photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
 .photo-placeholder{width:100%;height:100%;background:linear-gradient(135deg,var(--card),var(--gold-light));display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:.85rem;color:var(--muted);text-align:center;padding:20px}
-
+ 
 /* ABOUT */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
 .about-para{font-size:1.05rem;line-height:1.85;color:var(--muted);margin-bottom:24px}
@@ -58,11 +58,11 @@ section{min-height:100vh;padding:100px 80px 80px;max-width:1100px;margin:0 auto}
 .fun-fact{background:var(--glass);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-top:20px}
 .fun-fact h4{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-family:'Plus Jakarta Sans',sans-serif}
 .fun-fact p{font-size:.92rem;color:var(--muted);line-height:1.75}
-
+ 
 /* GLASS CARD */
 .glass-card{background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:.25s;cursor:pointer}
 .glass-card:hover{transform:translateY(-4px);border-color:rgba(201,168,76,.4);box-shadow:0 8px 32px rgba(201,168,76,.12)}
-
+ 
 /* EXPERIENCE */
 .timeline{position:relative;padding-left:30px}
 .timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--gold),var(--border))}
@@ -77,7 +77,7 @@ section{min-height:100vh;padding:100px 80px 80px;max-width:1100px;margin:0 auto}
 .exp-desc{font-size:.9rem;color:var(--muted);margin-bottom:14px}
 .badge{display:inline-block;background:rgba(201,168,76,.12);color:var(--gold-dark);padding:4px 12px;border-radius:999px;font-size:.78rem;font-weight:600;font-family:'Plus Jakarta Sans',sans-serif;margin-right:6px;margin-bottom:4px}
 .click-hint{font-size:.78rem;color:var(--gold);font-family:'Plus Jakarta Sans',sans-serif;font-weight:500;margin-top:10px;opacity:.7}
-
+ 
 /* VOLUNTEERING */
 .vol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .vol-card{background:var(--glass);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:var(--radius);padding:28px;cursor:pointer;transition:.25s}
@@ -86,7 +86,7 @@ section{min-height:100vh;padding:100px 80px 80px;max-width:1100px;margin:0 auto}
 .vol-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:4px}
 .vol-sub{font-size:.83rem;color:var(--gold);font-weight:600;font-family:'Plus Jakarta Sans',sans-serif;margin-bottom:10px}
 .vol-text{font-size:.88rem;color:var(--muted);line-height:1.7}
-
+ 
 /* EDUCATION */
 .edu-timeline{position:relative}
 .edu-line{display:flex;align-items:stretch;gap:0}
@@ -101,7 +101,7 @@ section{min-height:100vh;padding:100px 80px 80px;max-width:1100px;margin:0 auto}
 .pivot-box h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:10px}
 .pivot-box p{font-size:.92rem;line-height:1.75;opacity:.9}
 .pullquote{border-left:4px solid var(--gold);padding:16px 20px;background:rgba(201,168,76,.06);border-radius:0 12px 12px 0;margin:16px 0;font-style:italic;color:var(--text);font-size:1rem}
-
+ 
 /* PROJECTS */
 .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
 .proj-card{background:var(--glass);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:var(--radius);padding:28px;cursor:pointer;transition:.25s;position:relative;overflow:hidden}
@@ -111,7 +111,7 @@ section{min-height:100vh;padding:100px 80px 80px;max-width:1100px;margin:0 auto}
 .proj-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:6px}
 .proj-sub{font-size:.85rem;color:var(--muted);margin-bottom:14px}
 .outcome-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(201,168,76,.1);color:var(--gold-dark);padding:5px 12px;border-radius:999px;font-size:.78rem;font-weight:600;font-family:'Plus Jakarta Sans',sans-serif}
-
+ 
 /* GTM HUB */
 .gtm-engine{background:var(--card);border-radius:var(--radius);padding:32px;margin-bottom:32px;border:1px solid var(--border)}
 .gtm-engine-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:10px}
@@ -145,7 +145,7 @@ section{min-height:100vh;padding:100px 80px 80px;max-width:1100px;margin:0 auto}
 .flag-card{background:var(--bg);border-radius:var(--radius-sm);padding:20px;border-left:4px solid #E24B4A}
 .flag-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px}
 .flag-text{font-size:.85rem;color:var(--muted);line-height:1.7}
-
+ 
 /* ART GALLERY */
 .art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .art-card{height:320px;position:relative;perspective:1000px;cursor:pointer}
@@ -160,7 +160,7 @@ section{min-height:100vh;padding:100px 80px 80px;max-width:1100px;margin:0 auto}
 .art-back p{font-size:.85rem;color:var(--muted);line-height:1.7;flex:1}
 .art-back .feel{font-size:.82rem;font-style:italic;color:var(--gold-dark);margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}
 .art-hint{text-align:center;font-size:.8rem;color:var(--muted);margin-top:12px;font-style:italic}
-
+ 
 /* TRAVEL */
 .travel-grid{columns:3;gap:16px}
 .travel-item{break-inside:avoid;margin-bottom:16px;position:relative;border-radius:var(--radius-sm);overflow:hidden;cursor:pointer}
@@ -172,7 +172,7 @@ section{min-height:100vh;padding:100px 80px 80px;max-width:1100px;margin:0 auto}
 .travel-item:hover img{transform:scale(1.06)}
 .travel-ph{background:var(--card);display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:.78rem;color:var(--muted);text-align:center;padding:12px}
 .travel-note{text-align:center;padding:24px;color:var(--muted);font-size:.9rem;font-style:italic;background:var(--card);border-radius:var(--radius);border:1px dashed var(--border)}
-
+ 
 /* MUSIC */
 .music-layout{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
 .vinyl-wrap{display:flex;flex-direction:column;align-items:center;gap:24px}
@@ -191,7 +191,7 @@ section{min-height:100vh;padding:100px 80px 80px;max-width:1100px;margin:0 auto}
 .festival-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:4px}
 .festival-loc{font-size:.82rem;color:rgba(255,255,255,.5);margin-bottom:10px;font-family:'Plus Jakarta Sans',sans-serif}
 .festival-line{font-size:.88rem;color:rgba(255,255,255,.7);line-height:1.6}
-
+ 
 /* FOOTER */
 footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-content:space-between;align-items:center}
 .footer-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:700}
@@ -200,7 +200,7 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
 .footer-icon{width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(201,168,76,.4);display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--gold);font-size:16px;transition:.2s}
 .footer-icon:hover{background:var(--gold);color:#fff;border-color:var(--gold)}
 .footer-icon svg{width:18px;height:18px;fill:currentColor}
-
+ 
 /* MODAL */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px}
 .modal-overlay.open{display:flex}
@@ -216,32 +216,69 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
 .modal-section li{margin-bottom:4px}
 .stat-row{display:flex;gap:16px;margin-top:16px;flex-wrap:wrap}
 .stat-pill{background:var(--card);border-radius:999px;padding:8px 16px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.85rem;font-weight:700;color:var(--gold-dark)}
-
+ 
 /* INTRO SECTION */
 .intro-strip{background:var(--card);border-radius:var(--radius);padding:24px 32px;margin-bottom:40px;border-left:4px solid var(--gold)}
 .intro-strip p{font-size:1rem;color:var(--muted);line-height:1.8}
-
+ 
 /* RESPONSIVE */
+@media(max-width:1024px){
+  section{padding:60px 32px 60px}
+  #hero{padding:60px 32px!important}
+  #hero>div>div[style]{gap:40px!important}
+  .sidenav a .label{display:none}
+}
 @media(max-width:768px){
-  #hero section, #hero>div{grid-template-columns:1fr!important}
-  .hero-img{margin-top:32px}
-  section{padding:60px 24px}
-  .about-grid,.music-layout,.vol-grid,.proj-grid,.tools-grid,.red-flags{grid-template-columns:1fr}
+  section{padding:48px 20px 48px}
+  #hero{padding:48px 20px!important;min-height:auto!important}
+  #hero>div{grid-template-columns:1fr!important;gap:32px!important}
+  .hero-img{margin-top:8px;justify-content:flex-start}
+  .hero-img .photo-wrap{width:100%;max-width:340px;height:320px}
+  .hero-text h1{font-size:2rem!important}
+  .about-grid{grid-template-columns:1fr}
+  .about-para{font-size:.95rem}
+  .vol-grid{grid-template-columns:1fr}
+  .proj-grid{grid-template-columns:1fr}
+  .tools-grid{grid-template-columns:repeat(2,1fr)}
+  .red-flags{grid-template-columns:1fr}
   .art-grid{grid-template-columns:repeat(2,1fr)}
-  .travel-grid{columns:2}
-  .festivals-grid{grid-template-columns:1fr}
-  footer{flex-direction:column;gap:24px;padding:40px 24px;text-align:center}
+  .art-card{height:240px}
+  .travel-grid{columns:2;gap:10px}
+  .festivals-grid{grid-template-columns:repeat(2,1fr)}
+  .music-layout{grid-template-columns:1fr}
+  .gtm-engine{padding:20px}
+  .books-list .book-item{flex-direction:column;gap:8px}
+  .book-num{font-size:1.2rem}
+  footer{flex-direction:column;gap:20px;padding:36px 20px;text-align:center}
   .sidenav{display:none}
+  .modal{padding:24px;margin:12px}
+  .stat-row{flex-wrap:wrap}
+  div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;display:grid!important}
+  .exp-header{flex-direction:column;gap:8px}
+  .edu-content{padding:0 0 28px 16px}
+  .tags{gap:6px}
+  .tag{font-size:.75rem;padding:5px 12px}
+  .pivot-box{padding:20px}
+}
+@media(max-width:480px){
+  section{padding:40px 16px 40px}
+  #hero{padding:40px 16px!important}
+  .art-grid{grid-template-columns:1fr}
+  .art-card{height:280px}
+  .travel-grid{columns:1}
+  .tools-grid{grid-template-columns:1fr}
+  .festivals-grid{grid-template-columns:1fr}
+  .hero-img .photo-wrap{height:280px}
 }
 </style>
 </head>
 <body>
-
+ 
 <div class="hero-bg">
   <div class="blob blob1"></div>
   <div class="blob blob2"></div>
 </div>
-
+ 
 <!-- SIDE NAV -->
 <nav class="sidenav" id="sidenav">
   <a href="#hero" data-section="hero"><span class="label">Home</span><span class="dot"></span></a>
@@ -255,10 +292,10 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
   <a href="#travel" data-section="travel"><span class="label">Travel</span><span class="dot"></span></a>
   <a href="#music" data-section="music"><span class="label">Music</span><span class="dot"></span></a>
 </nav>
-
+ 
 <!-- HERO -->
-<section id="hero" style="padding:80px;max-width:none;margin:0">
-  <div style="max-width:1100px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center">
+<section id="hero" style="padding:60px 48px;max-width:none;margin:0;min-height:100vh;display:flex;align-items:center">
+  <div style="max-width:1100px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center">
     <div class="hero-text" style="display:flex;flex-direction:column;justify-content:center">
       <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.3rem,2.5vw,2rem);font-weight:700;color:var(--gold);margin-bottom:10px;line-height:1.2;letter-spacing:-.01em">The Story I'm Still Writing</p>
       <h1 style="font-size:clamp(1.5rem,2.8vw,2.2rem);font-weight:600;margin-bottom:6px">Ankit Mishra</h1>
@@ -269,13 +306,13 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
     <div class="hero-img">
       <div class="photo-wrap">
         <div class="photo-placeholder" style="padding:0;background:none">
-          <img src="./Profile Pictures/IMG_9271.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top center" alt="Ankit Mishra">
+          <img src="profile.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top center" alt="Ankit Mishra">
         </div>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <section id="about">
   <p class="section-title" style="font-size:clamp(2rem,4vw,3rem);margin-bottom:4px">Who I Am</p>
   <p class="section-label" style="margin-bottom:40px;font-size:.85rem">About Me</p>
@@ -298,9 +335,13 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
           Email Me
         </a>
-        <a href="./Resume/Ankit Mishra_Sales Professional Resume_17 May 2026.docx.pdf" download class="btn" style="font-size:.85rem;padding:10px 20px;background:transparent;border:1.5px solid var(--gold);color:var(--gold-dark);display:flex;align-items:center;gap:6px">
+        <a href="resume.pdf" download class="btn" style="font-size:.85rem;padding:10px 20px;background:transparent;border:1.5px solid var(--gold);color:var(--gold-dark);display:flex;align-items:center;gap:6px">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Resume
+        </a>
+        <a href="https://calendly.com/connectankit430/30min" target="_blank" class="btn" style="font-size:.85rem;padding:10px 20px;background:transparent;border:1.5px solid var(--gold);color:var(--gold-dark);display:flex;align-items:center;gap:6px">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Book a Call
         </a>
       </div>
     </div>
@@ -316,7 +357,7 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
     </div>
   </div>
 </section>
-
+ 
 <!-- EXPERIENCE -->
 <section id="experience">
   <p class="section-title" style="font-size:clamp(2rem,4vw,3rem);margin-bottom:4px">Career Journey</p>
@@ -352,9 +393,9 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
     </div>
   </div>
 </section>
-
+ 
 <!-- VOLUNTEERING moved - see before Art section -->
-
+ 
 <!-- EDUCATION -->
 <section id="education">
   <p class="section-title" style="font-size:clamp(2rem,4vw,3rem);margin-bottom:4px">Education</p>
@@ -399,7 +440,7 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
     </div>
   </div>
 </section>
-
+ 
 <!-- PROJECTS -->
 <section id="projects">
   <p class="section-title" style="font-size:clamp(2rem,4vw,3rem);margin-bottom:4px">What I've Built</p>
@@ -449,13 +490,13 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
     </div>
   </div>
 </section>
-
+ 
 <!-- GTM HUB -->
 <section id="gtm">
   <p class="section-title" style="font-size:clamp(2rem,4vw,3rem);margin-bottom:4px">Sharing What I've Learned</p>
   <p class="section-label" style="margin-bottom:16px;font-size:.85rem">Sales &amp; GTM - A Glimpse</p>
   <p style="color:var(--muted);margin-bottom:40px;font-size:1rem">Still learning every day, but here are some patterns and frameworks I've picked up along the way. Click any stage to expand.</p>
-
+ 
   <div class="gtm-engine">
     <div class="gtm-engine-title">⚙️ Engine 1 - The Direct Sales Machine</div>
     <div class="gtm-stage" onclick="toggleStage(this)">
@@ -515,7 +556,7 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
       </div>
     </div>
   </div>
-
+ 
   <div class="gtm-engine">
     <div class="gtm-engine-title">🤝 Engine 2 - The Strategic Partnership Machine</div>
     <div class="gtm-stage" onclick="toggleStage(this)">
@@ -560,7 +601,7 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
       </div>
     </div>
   </div>
-
+ 
   <!-- Red Flags -->
   <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:20px">Deal Guardrails - The Red Flag Stress Tests</h3>
   <div class="red-flags">
@@ -578,7 +619,7 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
       <a class="cta-icon" href="mailto:connectankit430@gmail.com">✉</a>
     </div>
   </div>
-
+ 
   <!-- Tool Stack -->
   <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.3rem;font-weight:700;margin:40px 0 20px">The Tool Stack</h3>
   <div class="tools-grid">
@@ -591,7 +632,7 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
     <div class="tool-card"><div class="tool-icon">🤝</div><div class="tool-name">Sandler + Voss</div><div class="tool-desc">Negotiation frameworks</div></div>
     <div class="tool-card"><div class="tool-icon">🔍</div><div class="tool-name">LinkedIn Sales Nav</div><div class="tool-desc">Ecosystem intelligence</div></div>
   </div>
-
+ 
   <!-- Books -->
   <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.3rem;font-weight:700;margin:40px 0 4px">The 10/10 Shelf</h3>
   <p style="color:var(--muted);font-size:.9rem;margin-bottom:20px">These books will help anyone get started in sales.</p>
@@ -603,55 +644,15 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
     <div class="book-item"><div class="book-num">05</div><div><div class="book-title">Gap Selling - Keenan</div><p class="book-para">The gap between a prospect's current state and desired future state is where your value lives. If you can't define that gap with precision, you cannot close with confidence.</p><div class="book-for">Best for: AEs sharpening discovery and value articulation in competitive deals</div></div></div>
     <div class="book-item"><div class="book-num">06</div><div><div class="book-title">Fanatical Prospecting - Jeb Blount</div><p class="book-para">Pipeline cures everything. The most elegant sales process in the world is worthless without enough top-of-funnel activity. The discomfort of accepting that relentless prospecting is non-negotiable is the point.</p><div class="book-for">Best for: SDRs, BDRs, and any AE whose pipeline is thinner than their comfort admits</div></div></div>
   </div>
-    <div class="cta-box" style="margin-top:24px">
+  <div class="cta-box" style="margin-top:24px">
     <p>Share what book has helped you succeed? I'd love to hear what's shaped your thinking.</p>
     <div class="cta-icons">
       <a class="cta-icon" href="https://www.linkedin.com/in/ankitmish/" target="_blank">in</a>
       <a class="cta-icon" href="mailto:connectankit430@gmail.com">✉</a>
     </div>
   </div>
-
-<!-- TESTIMONIALS -->
-  <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.3rem;font-weight:700;margin:48px 0 4px">What People Say</h3>
-  <p style="color:var(--muted);font-size:.9rem;margin-bottom:28px">A few kind words from people I've had the privilege of working with.</p>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:40px">
-
-    <div style="background:var(--glass);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;justify-content:space-between">
-      <div>
-        <p style="font-size:1.6rem;color:var(--gold);line-height:1;margin-bottom:12px;font-family:'Plus Jakarta Sans',sans-serif">"</p>
-        <p style="font-size:.9rem;color:var(--muted);line-height:1.8;font-style:italic">Ankit brings a rare combination of precision and enthusiasm to everything he touches. Working alongside him on partner engagements, I was consistently impressed by his attention to detail, his genuine curiosity, and his willingness to try new approaches when the conventional playbook wasn't enough. He doesn't just show up - he adds energy to the room.</p>
-      </div>
-      <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border)">
-        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;font-weight:700;color:var(--text)">Trang</p>
-        <p style="font-size:.8rem;color:var(--gold);font-family:'Plus Jakarta Sans',sans-serif;font-weight:500">Partner Director · HighRadius</p>
-      </div>
-    </div>
-
-    <div style="background:var(--glass);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;justify-content:space-between">
-      <div>
-        <p style="font-size:1.6rem;color:var(--gold);line-height:1;margin-bottom:12px;font-family:'Plus Jakarta Sans',sans-serif">"</p>
-        <p style="font-size:.9rem;color:var(--muted);line-height:1.8;font-style:italic">I had the pleasure of mentoring Ankit early in his career, and what stood out immediately was how quickly he moved from understanding to execution. He doesn't just grasp concepts - he finds ways to apply them before the conversation is over. A rare quality in someone so early in their journey.</p>
-      </div>
-      <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border)">
-        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;font-weight:700;color:var(--text)">Servo</p>
-        <p style="font-size:.8rem;color:var(--gold);font-family:'Plus Jakarta Sans',sans-serif;font-weight:500">Partnerships Head · HighRadius</p>
-      </div>
-    </div>
-
-    <div style="background:var(--glass);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;justify-content:space-between">
-      <div>
-        <p style="font-size:1.6rem;color:var(--gold);line-height:1;margin-bottom:12px;font-family:'Plus Jakarta Sans',sans-serif">"</p>
-        <p style="font-size:.9rem;color:var(--muted);line-height:1.8;font-style:italic">Joining direct enterprise sales from a partnerships background is a steep transition - most people take months to find their footing. Ankit accelerated through that curve faster than anyone I've managed. What impressed me most was his research discipline and his ability to turn analysis into a structured plan that actually held up under pressure.</p>
-      </div>
-      <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border)">
-        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;font-weight:700;color:var(--text)">Barun</p>
-        <p style="font-size:.8rem;color:var(--gold);font-family:'Plus Jakarta Sans',sans-serif;font-weight:500">Sales Manager · Whatfix</p>
-      </div>
-    </div>
-
-  </div>
 </section>
-
+ 
 <!-- VOLUNTEERING -->
 <section id="volunteering">
   <p class="section-title" style="font-size:clamp(2rem,4vw,3rem);margin-bottom:4px">Beyond the Work</p>
@@ -684,7 +685,7 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
   </div>
   <p style="text-align:center;margin-top:32px;color:var(--muted);font-style:italic;font-size:.92rem">I'm always looking for the next initiative worth joining - in Dublin, or wherever I happen to be.</p>
 </section>
-
+ 
 <!-- ART -->
 <section id="art">
   <p class="section-title" style="font-size:clamp(2rem,4vw,3rem);margin-bottom:4px">How I See the World</p>
@@ -692,11 +693,12 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
   <p style="color:var(--muted);margin-bottom:12px;max-width:600px">I've never been able to explain why I paint. I just know that certain things, a face, a feeling, a moment of stillness, refuse to stay only in my head.</p>
   <p class="art-hint" style="text-align:left;margin-bottom:32px">↓ Click to flip each card and reveal the story</p>
   <div class="art-grid">
-
     <div class="art-card" onclick="this.classList.toggle('flipped')">
       <div class="art-inner">
         <div class="art-front">
-          <img src="./Art Work/Seasons.jpeg" alt="Seasons" style="width:100%;height:100%;object-fit:cover;display:block">
+          <div class="art-ph" style="height:320px;background:linear-gradient(135deg,#7BAF9E,#4A8C7E,#2A6B5E)">
+            <div style="color:rgba(255,255,255,.9)">🖼 Seasons.jpeg<br><small>Replace with your painting</small></div>
+          </div>
           <div class="art-label-overlay">Seasons · Acrylic on canvas</div>
         </div>
         <div class="art-back">
@@ -706,11 +708,12 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
         </div>
       </div>
     </div>
-
     <div class="art-card" onclick="this.classList.toggle('flipped')">
       <div class="art-inner">
         <div class="art-front">
-          <img src="./Art Work/Shiva.jpeg" alt="Shiva" style="width:100%;height:100%;object-fit:cover;display:block">
+          <div class="art-ph" style="height:320px;background:linear-gradient(135deg,#1a3a8f,#2652c7,#5b84e8)">
+            <div style="color:rgba(255,255,255,.9)">🖼 Shiva.jpeg<br><small>Replace with your painting</small></div>
+          </div>
           <div class="art-label-overlay">Shiva · Watercolour &amp; ink wash</div>
         </div>
         <div class="art-back">
@@ -720,11 +723,12 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
         </div>
       </div>
     </div>
-
     <div class="art-card" onclick="this.classList.toggle('flipped')">
       <div class="art-inner">
         <div class="art-front">
-          <img src="./Art Work/Therapy.jpeg" alt="Therapy" style="width:100%;height:100%;object-fit:cover;display:block">
+          <div class="art-ph" style="height:320px;background:linear-gradient(135deg,#c0392b,#e74c3c,#f39c12,#1a1a1a)">
+            <div style="color:rgba(255,255,255,.9)">🖼 Therapy.jpeg<br><small>Replace with your painting</small></div>
+          </div>
           <div class="art-label-overlay">Therapy · Acrylic, expressive</div>
         </div>
         <div class="art-back">
@@ -734,11 +738,12 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
         </div>
       </div>
     </div>
-
     <div class="art-card" onclick="this.classList.toggle('flipped')">
       <div class="art-inner">
         <div class="art-front">
-          <img src="./Art Work/Mandala.jpeg" alt="Mandala" style="width:100%;height:100%;object-fit:cover;display:block">
+          <div class="art-ph" style="height:320px;background:linear-gradient(135deg,#f5f5f0,#e8e8e0,#d0d0c0)">
+            <div style="color:var(--muted)">🖼 Mandala.jpeg<br><small>Replace with your painting</small></div>
+          </div>
           <div class="art-label-overlay">Mandala · Pen &amp; ink</div>
         </div>
         <div class="art-back">
@@ -748,11 +753,12 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
         </div>
       </div>
     </div>
-
-    <div class="art-card" onclick="this.classList.toggle('flipped')">
-      <div class="art-inner">
+    <div class="art-card" onclick="this.classList.toggle('flipped')" style="grid-column:span 2">
+      <div class="art-inner" style="height:320px">
         <div class="art-front">
-          <img src="./Art Work/Ride On.jpeg" alt="Ride On" style="width:100%;height:100%;object-fit:cover;display:block">
+          <div class="art-ph" style="height:320px;background:linear-gradient(135deg,#f0c040,#e8a820,#d49010)">
+            <div style="color:rgba(255,255,255,.9)">🖼 Ride On.jpeg<br><small>Replace with your painting</small></div>
+          </div>
           <div class="art-label-overlay">Ride On · Acrylic on canvas</div>
         </div>
         <div class="art-back">
@@ -762,30 +768,29 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
         </div>
       </div>
     </div>
-
   </div>
 </section>
-
+ 
 <!-- TRAVEL -->
 <section id="travel">
   <p class="section-title" style="font-size:clamp(2rem,4vw,3rem);margin-bottom:4px">Wherever Next</p>
   <p class="section-label" style="margin-bottom:16px;font-size:.85rem">Travel Gallery</p>
   <p style="color:var(--muted);margin-bottom:32px;max-width:600px">I travel the way I do most things - with curiosity first and a plan second. Business trips that turn into weekend detours, meals ordered by pointing at the menu and hoping for the best.</p>
   <div class="travel-grid" id="travelGrid">
-    <div class="travel-item"><img src="./Travel Gallery/1) Cliff of Moher.jpeg" alt="Cliffs of Moher, Ireland" loading="lazy"><div class="overlay"><span class="loc">Cliffs of Moher, Ireland</span></div></div>
-    <div class="travel-item"><img src="./Travel Gallery/2) Aran Island.jpeg" alt="Aran Islands, Ireland" loading="lazy"><div class="overlay"><span class="loc">Aran Islands, Ireland</span></div></div>
-    <div class="travel-item"><img src="./Travel Gallery/5) Newyork bridge.jpeg" alt="DUMBO, New York" loading="lazy"><div class="overlay"><span class="loc">DUMBO, New York</span></div></div>
-    <div class="travel-item"><img src="./Travel Gallery/3) Northern Lights.jpeg" alt="Northern Lights, Iceland" loading="lazy"><div class="overlay"><span class="loc">Northern Lights, Iceland</span></div></div>
-    <div class="travel-item"><img src="./Travel Gallery/7) Timesquare.jpeg" alt="Times Square, New York" loading="lazy"><div class="overlay"><span class="loc">Times Square, New York</span></div></div>
-    <div class="travel-item"><img src="./Travel Gallery/4) Hike Kedarnath.jpeg" alt="Kedarnath, India" loading="lazy"><div class="overlay"><span class="loc">Kedarnath, India</span></div></div>
-    <div class="travel-item"><img src="./Travel Gallery/8) Friends building.jpeg" alt="Greenwich Village, New York" loading="lazy"><div class="overlay"><span class="loc">Greenwich Village, New York</span></div></div>
-    <div class="travel-item"><img src="./Travel Gallery/6) Wallstreet.jpeg" alt="Wall Street, New York" loading="lazy"><div class="overlay"><span class="loc">Wall Street, New York</span></div></div>
-    <div class="travel-item"><img src="./Travel Gallery/9) Hike BLR.jpeg" alt="Bangalore, India" loading="lazy"><div class="overlay"><span class="loc">Bangalore, India</span></div></div>
-    <div class="travel-item"><img src="./Travel Gallery/10) Waterfall AP.jpeg" alt="Jogini Falls, Manali" loading="lazy"><div class="overlay"><span class="loc">Jogini Falls, Manali</span></div></div>
-    <div class="travel-item"><img src="./Travel Gallery/12) Selfie w Dog.jpeg" alt="Himachal Pradesh, India" loading="lazy"><div class="overlay"><span class="loc">Himachal Pradesh, India</span></div></div>
-    <div class="travel-item"><img src="./Travel Gallery/11) AP mountain.jpeg" alt="Arunachal Pradesh, India" loading="lazy"><div class="overlay"><span class="loc">Arunachal Pradesh, India</span></div></div>
+    <div class="travel-item"><img src="t1.jpeg" alt="Cliffs of Moher, Ireland" loading="lazy"><div class="overlay"><span class="loc">Cliffs of Moher, Ireland</span></div></div>
+    <div class="travel-item"><img src="t4.jpeg" alt="Aran Islands, Ireland" loading="lazy"><div class="overlay"><span class="loc">Aran Islands, Ireland</span></div></div>
+    <div class="travel-item"><img src="t5.jpeg" alt="New York, USA" loading="lazy"><div class="overlay"><span class="loc">DUMBO, New York</span></div></div>
+    <div class="travel-item"><img src="t3.jpeg" alt="Northern Lights" loading="lazy"><div class="overlay"><span class="loc">Northern Lights, Iceland</span></div></div>
+    <div class="travel-item"><img src="t7.jpeg" alt="Times Square, New York" loading="lazy"><div class="overlay"><span class="loc">Times Square, New York</span></div></div>
+    <div class="travel-item"><img src="t11.jpeg" alt="Himachal Pradesh, India" loading="lazy"><div class="overlay"><span class="loc">Himachal Pradesh, India</span></div></div>
+    <div class="travel-item"><img src="t2.jpeg" alt="Manali, India" loading="lazy"><div class="overlay"><span class="loc">Manali, India</span></div></div>
+    <div class="travel-item"><img src="t8.jpeg" alt="Greenwich Village, New York" loading="lazy"><div class="overlay"><span class="loc">Greenwich Village, New York</span></div></div>
+    <div class="travel-item"><img src="t12.jpeg" alt="Mountains, India" loading="lazy"><div class="overlay"><span class="loc">Himachal Pradesh, India</span></div></div>
+    <div class="travel-item"><img src="t10.jpeg" alt="Waterfall, India" loading="lazy"><div class="overlay"><span class="loc">Jogini Falls, Manali</span></div></div>
+    <div class="travel-item"><img src="t6.jpeg" alt="New York" loading="lazy"><div class="overlay"><span class="loc">Empire State, New York</span></div></div>
+    <div class="travel-item"><img src="t9.jpeg" alt="Misty Hills, India" loading="lazy"><div class="overlay"><span class="loc">Odisha, India</span></div></div>
   </div>
-
+ 
   <!-- Lightbox -->
   <div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:2000;align-items:center;justify-content:center;flex-direction:column" onclick="closeLightbox(event)">
     <button onclick="document.getElementById('lightbox').style.display='none'" style="position:absolute;top:20px;right:24px;background:none;border:none;color:#fff;font-size:28px;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif">✕</button>
@@ -794,7 +799,7 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
     <button onclick="moveLight(1)" style="position:absolute;right:20px;background:none;border:none;color:#fff;font-size:36px;cursor:pointer">›</button>
   </div>
 </section>
-
+ 
 <!-- MUSIC -->
 <section id="music">
   <p class="section-title" style="font-size:clamp(2rem,4vw,3rem);margin-bottom:4px">The Frequency</p>
@@ -824,7 +829,7 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
           <div style="position:absolute;left:-4px;top:-5px;width:14px;height:12px;background:#8B6914;border-radius:3px 3px 2px 2px;transform:rotate(15deg)"></div>
         </div>
       </div>
-
+ 
       <!-- Play button -->
       <a id="spotify-play-btn" href="https://open.spotify.com/playlist/6IedZoicso4q7kbAX8ZARD?si=1LKRHlL3RmOb0zpB6Cpbtg" target="_blank"
         style="display:inline-flex;align-items:center;gap:10px;background:#1DB954;color:#fff;padding:12px 24px;border-radius:999px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:.95rem;text-decoration:none;transition:.2s;box-shadow:0 4px 16px rgba(29,185,84,.3);cursor:pointer"
@@ -836,7 +841,7 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
       </a>
     </div>
   </div>
-
+ 
   <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.3rem;font-weight:700;margin:48px 0 8px">Music Festivals</h3>
   <p style="color:var(--muted);margin-bottom:24px;font-size:.92rem">There's a particular kind of freedom that only exists in a field at 2am with 50,000 people and a sound system you feel in your chest. If any of these are on your list - <strong>hit me up.</strong></p>
   <div class="festivals-grid">
@@ -847,7 +852,7 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
     <div class="festival-card" style="padding:16px 20px"><div class="festival-name" style="font-size:1rem">Origin Festival</div><div class="festival-loc" style="margin-bottom:0">United Kingdom</div></div>
   </div>
 </section>
-
+ 
 <!-- FOOTER -->
 <footer>
   <div>
@@ -864,9 +869,12 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
     <a class="footer-icon" href="resume.pdf" download title="Download Resume">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
     </a>
+    <a class="footer-icon" href="https://calendly.com/connectankit430/30min" target="_blank" title="Book a Call">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    </a>
   </div>
 </footer>
-
+ 
 <!-- MODALS -->
 <div class="modal-overlay" id="modal-hr" onclick="closeModalOnBg(event)">
   <div class="modal">
@@ -878,10 +886,10 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
     <div class="modal-section"><h4>Hardest Challenge</h4><p>Managing the Accenture relationship solo. Frequently on update calls directly with the CEO. The pressure was immense - but it was a masterclass in executive communication and accountability.</p></div>
     <div class="modal-section"><h4>Proudest Moment</h4><p>A tie. Closing the Wesco International deal at 11:45 PM on New Year's Eve - and seeing 2 of the 3 interns I mentored secure full-time offers.</p></div>
     <div class="modal-section"><h4>The Lesson</h4><p>Curiosity is your greatest asset. Apply first principles, find the root cause, hold yourself accountable - you will always rise above mediocrity.</p></div>
-    <div class="stat-row"><span class="stat-pill">$10M+ Pipeline Generated</span><span class="stat-pill">110% of $4M Quota </span><span class="stat-pill">2× President's Club</span></div>
+    <div class="stat-row"><span class="stat-pill">$10M+ Pipeline Generated</span><span class="stat-pill">110% of $4M Quota (2020)</span><span class="stat-pill">2× President's Club</span></div>
   </div>
 </div>
-
+ 
 <div class="modal-overlay" id="modal-wx" onclick="closeModalOnBg(event)">
   <div class="modal">
     <button class="modal-close" onclick="closeModal('modal-wx')">✕</button>
@@ -892,32 +900,30 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
     <div class="modal-section"><h4>Strategic Win</h4><p>Engineered a niche market entry into Product Lifecycle Management (PLM) platforms - creating 10 joint opportunities in just 90 days.</p></div>
     <div class="modal-section"><h4>Why the Master's</h4><p>I could sell the solution. I wanted to be the one architecting the broader strategy. To move from executing a playbook to writing one.</p></div>
     <div class="modal-section"><h4>The Lesson</h4><p>Master the frameworks - MEDDPICC, Sandler, Value Selling - but never lose the human element of no-oriented questioning.</p></div>
-    <div class="stat-row"><span class="stat-pill">116% of Target </span><span class="stat-pill">Dell · UiPath · Amtrak</span><span class="stat-pill">SPOT Award</span></div>
+    <div class="stat-row"><span class="stat-pill">116% of Target (2023)</span><span class="stat-pill">Dell · UiPath · Amtrak</span><span class="stat-pill">SPOT Award</span></div>
   </div>
 </div>
-
+ 
 <div class="modal-overlay" id="modal-pendulum" onclick="closeModalOnBg(event)">
   <div class="modal">
     <button class="modal-close" onclick="closeModal('modal-pendulum')">✕</button>
-    <img src="./Volunteering & Events/Pendulum Summit.jpeg" alt="Pendulum Summit" style="width:100%;height:220px;object-fit:cover;border-radius:12px;margin-bottom:20px;display:block">
     <h2>Pendulum Summit</h2>
     <div class="modal-sub">Volunteer · Dublin, Ireland</div>
     <div class="modal-section"><p>Pendulum Summit is one of Europe's largest business and personal development conferences, bringing together world-class speakers, leaders, and thinkers in Dublin every year. Volunteering here put me in the room with extraordinary people - and reminded me that showing up with energy and intent, even without a ticket, gets you further than most.</p></div>
     <div class="modal-section"><h4>What it gave me</h4><p>Perspective. And a very good reason to be in that room.</p></div>
   </div>
 </div>
-
+ 
 <div class="modal-overlay" id="modal-beach" onclick="closeModalOnBg(event)">
   <div class="modal">
     <button class="modal-close" onclick="closeModal('modal-beach')">✕</button>
-    <img src="./Volunteering & Events/Beach Cleanup Team Lead.jpeg" alt="Beach Clean-Up Dublin" style="width:100%;height:220px;object-fit:cover;border-radius:12px;margin-bottom:20px;display:block">
     <h2>Beach Clean-Up, Dublin</h2>
     <div class="modal-sub">Team Lead · 80 Volunteers</div>
     <div class="modal-section"><p>I didn't just show up for this one - I led it. Coordinating a team of 80 volunteers across a beach clean-up operation in Dublin was one of those experiences that reminds you how much gets done when people simply decide to care. Logistics, motivation, execution - and at the end of it, a cleaner shoreline and a group of strangers who felt like a team.</p></div>
     <div class="modal-section"><h4>What it gave me</h4><p>Proof that leadership doesn't need a job title. It just needs someone willing to organise the chaos.</p></div>
   </div>
 </div>
-
+ 
 <div class="modal-overlay" id="modal-rotary" onclick="closeModalOnBg(event)">
   <div class="modal">
     <button class="modal-close" onclick="closeModal('modal-rotary')">✕</button>
@@ -927,7 +933,7 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
     <div class="modal-section"><h4>What it gave me</h4><p>A habit of contribution that I've carried into every city I've lived in since.</p></div>
   </div>
 </div>
-
+ 
 <div class="modal-overlay" id="modal-wrxflo" onclick="closeModalOnBg(event)">
   <div class="modal">
     <button class="modal-close" onclick="closeModal('modal-wrxflo')">✕</button>
@@ -941,7 +947,7 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
     <div class="modal-section"><h4>What I Learned</h4><p>Frameworks only matter if they change behaviour. Write as if you won't be in the room. And always be explicit about assumptions - false certainty is worse than honest uncertainty.</p></div>
   </div>
 </div>
-
+ 
 <div class="modal-overlay" id="modal-foodbridge" onclick="closeModalOnBg(event)">
   <div class="modal">
     <button class="modal-close" onclick="closeModal('modal-foodbridge')">✕</button>
@@ -954,7 +960,7 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
     <div class="modal-section"><h4>What I Learned</h4><p>Impact and revenue need to share the same sentence. Legitimacy is granular - one wrong number and a judge discounts everything else. Every stat in our deck was traced to a primary EU institutional source.</p></div>
   </div>
 </div>
-
+ 
 <div class="modal-overlay" id="modal-nexus" onclick="closeModalOnBg(event)">
   <div class="modal">
     <button class="modal-close" onclick="closeModal('modal-nexus')">✕</button>
@@ -966,7 +972,7 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
     <div class="modal-section"><h4>What I Learned</h4><p>In category-challenger brands built on community, the brand strategy should be the business strategy. When those two documents are separate, something has gone wrong in the thinking.</p></div>
   </div>
 </div>
-
+ 
 <div class="modal-overlay" id="modal-onus" onclick="closeModalOnBg(event)">
   <div class="modal">
     <button class="modal-close" onclick="closeModal('modal-onus')">✕</button>
@@ -978,20 +984,19 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
     <div class="stat-row"><span class="stat-pill">Break-even Month 15</span><span class="stat-pill">€408K ARR at break-even</span><span class="stat-pill">28 Harvard citations</span></div>
   </div>
 </div>
-
+ 
 <div class="modal-overlay" id="modal-rsm" onclick="closeModalOnBg(event)">
   <div class="modal">
     <button class="modal-close" onclick="closeModal('modal-rsm')">✕</button>
-    <img src="./Projects & Case Competitions/RSM Case Study Competition.jpeg" alt="RSM Case Study Competition" style="width:100%;height:220px;object-fit:cover;border-radius:12px;margin-bottom:20px;display:block">
     <h2>RSM Case Study Competition</h2>
     <div class="modal-sub">Lead Consultant · 2nd Place out of 36 Teams · €400 Prize</div>
     <div class="modal-section"><h4>The Challenge</h4><p>McGrath Consultancy Partnership: AI was commoditising the firm's core product - expert knowledge. Two major clients reduced scope due to internal AI units. Projected 9% revenue drop. Redefine the value proposition before proprietary knowledge loses all pricing power.</p></div>
     <div class="modal-section"><h4>The Platform-Fortress Strategy</h4><p>The Platform: commercialising the internal "Atlas" AI into a subscription-based benchmarking tool - turning a cost centre into recurring revenue. The Fortress: elevating human consultants to focus exclusively on board-level judgment calls that AI cannot replicate.</p></div>
-    <div class="modal-section"><h4>The Atlas Vanguard Idea</h4><p>Faced with a €280M investment requirement, I proposed recruiting 6-8 Tier-1 clients to co-fund the build. In exchange: Vanguard pricing and a seat on the steering committee. Transformed a high-risk capital call into a market-validated product launch. Drawn directly from enterprise SaaS GTM playbooks.</p></div>
+    <div class="modal-section"><h4>The Atlas Vanguard Idea</h4><p>Faced with a €280M investment requirement, I proposed recruiting 6–8 Tier-1 clients to co-fund the build. In exchange: Vanguard pricing and a seat on the steering committee. Transformed a high-risk capital call into a market-validated product launch. Drawn directly from enterprise SaaS GTM playbooks.</p></div>
     <div class="modal-section"><h4>The Judges' Verdict</h4><p>Specifically commended our "lateral thinking" - while most teams focused on internal restructuring, our external commercialisation approach and Design Partner model was described as a sophisticated, real-world solution to the Innovator's Dilemma.</p></div>
   </div>
 </div>
-
+ 
 <div class="modal-overlay" id="modal-sos" onclick="closeModalOnBg(event)">
   <div class="modal">
     <button class="modal-close" onclick="closeModal('modal-sos')">✕</button>
@@ -1004,7 +1009,7 @@ footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-
     <div class="modal-section"><h4>What I Learned</h4><p>Operational structure is the prerequisite for creative innovation. You can have the most viral brand in the city, but without a documented supply chain and a Founder-to-Manager mindset, you cannot scale.</p></div>
   </div>
 </div>
-
+ 
 <script>
 let vinylPlaying = false;
 function startVinyl(){
@@ -1016,7 +1021,7 @@ function startVinyl(){
     vinylPlaying = true;
   }
 }
-const travelImgs=['t1.jpeg','t4.jpeg','t5.jpeg','t3.jpeg','t7.jpeg','t11.jpeg','t2.jpeg','t8.jpeg','t12.jpeg','t10.jpeg','t6.jpeg','t9.jpeg'];
+const travelImgs=['./Travel Gallery/1) Cliff of Moher.jpeg','./Travel Gallery/2) Aran Island.jpeg','./Travel Gallery/5) Newyork bridge.jpeg','./Travel Gallery/3) Northern Lights.jpeg','./Travel Gallery/7) Timesquare.jpeg','./Travel Gallery/4) Hike Kedarnath.jpeg','./Travel Gallery/8) Friends building.jpeg','./Travel Gallery/6) Wallstreet.jpeg','./Travel Gallery/9) Hike BLR.jpeg','./Travel Gallery/10) Waterfall AP.jpeg','./Travel Gallery/12) Selfie w Dog.jpeg','./Travel Gallery/11) AP mountain.jpeg'];
 let lightIdx=0;
 function openLightbox(idx){lightIdx=idx;document.getElementById('lightbox-img').src=travelImgs[idx];const lb=document.getElementById('lightbox');lb.style.display='flex';document.body.style.overflow='hidden'}
 function closeLightbox(e){if(e.target===e.currentTarget||e.target.tagName==='IMG'===false){if(e.target.id==='lightbox'){document.getElementById('lightbox').style.display='none';document.body.style.overflow=''}}}
@@ -1026,7 +1031,7 @@ function openModal(id){document.getElementById(id).classList.add('open');documen
 function closeModal(id){document.getElementById(id).classList.remove('open');document.body.style.overflow=''}
 function closeModalOnBg(e){if(e.target===e.currentTarget){e.currentTarget.classList.remove('open');document.body.style.overflow=''}}
 function toggleStage(el){el.classList.toggle('open')}
-
+ 
 const sections=['hero','about','experience','education','projects','gtm','volunteering','art','travel','music'];
 const navLinks=document.querySelectorAll('.sidenav a');
 const observer=new IntersectionObserver(entries=>{
