@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ankit Mishra - Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#FFFDF7;--gold:#C9A84C;--gold-light:#E8D5A0;--gold-dark:#9B7A28;
+  --card:#F5ECD7;--text:#1A1A1A;--muted:#6B6B6B;--border:#E8DCC8;
+  --glass:rgba(255,253,247,0.75);--radius:20px;--radius-sm:12px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);font-family:'DM Sans',sans-serif;color:var(--text);line-height:1.7}
+h1,h2,h3,h4{font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:-0.02em}
+
+/* NAV */
+.sidenav{position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+.sidenav a{display:flex;align-items:center;gap:8px;text-decoration:none;cursor:pointer}
+.sidenav a .dot{width:8px;height:8px;border-radius:50%;background:var(--border);border:1.5px solid var(--gold);transition:.3s}
+.sidenav a .label{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:500;color:var(--muted);opacity:0;transition:.3s;white-space:nowrap}
+.sidenav a:hover .dot,.sidenav a.active .dot{background:var(--gold);width:10px;height:10px}
+.sidenav a:hover .label,.sidenav a.active .label{opacity:1}
+
+/* SECTIONS */
+section{min-height:100vh;padding:100px 80px 80px;max-width:1100px;margin:0 auto}
+.section-label{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.section-title{font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:40px;color:var(--text)}
+
+/* HERO */
+#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:60px;padding:80px;max-width:1100px;margin:0 auto;position:relative}
+.hero-bg{position:fixed;inset:0;z-index:-1;background:var(--bg);overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.18}
+.blob1{width:500px;height:500px;background:var(--gold);top:-100px;right:-100px}
+.blob2{width:400px;height:400px;background:#E8C97A;bottom:0;left:-100px}
+.hero-text h1{font-size:clamp(2.5rem,5vw,3.8rem);font-weight:700;line-height:1.1;margin-bottom:8px}
+.hero-text .title{font-size:1.1rem;color:var(--gold);font-weight:600;font-family:'Plus Jakarta Sans',sans-serif;margin-bottom:20px}
+.hero-tagline{font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:32px;font-style:italic;border-left:3px solid var(--gold);padding-left:16px}
+.btn{display:inline-block;background:var(--gold);color:#fff;padding:12px 28px;border-radius:var(--radius-sm);font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:.95rem;text-decoration:none;transition:.2s;cursor:pointer;border:none}
+.btn:hover{background:var(--gold-dark);transform:translateY(-1px)}
+.hero-img{display:flex;justify-content:center}
+.hero-img .photo-wrap{width:340px;height:400px;border-radius:24px;overflow:hidden;border:3px solid var(--gold-light);position:relative}
+.hero-img .photo-wrap img{width:100%;height:100%;object-fit:cover}
+.photo-placeholder{width:100%;height:100%;background:linear-gradient(135deg,var(--card),var(--gold-light));display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:.85rem;color:var(--muted);text-align:center;padding:20px}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.about-para{font-size:1.05rem;line-height:1.85;color:var(--muted);margin-bottom:24px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.tag{padding:6px 16px;border-radius:999px;border:1.5px solid var(--gold);color:var(--gold-dark);font-family:'Plus Jakarta Sans',sans-serif;font-size:.82rem;font-weight:600}
+.currently-box{background:var(--card);border-radius:var(--radius);padding:24px;border-left:4px solid var(--gold)}
+.currently-box h4{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-family:'Plus Jakarta Sans',sans-serif}
+.currently-box p{font-size:.92rem;color:var(--muted);line-height:1.75}
+.fun-fact{background:var(--glass);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-top:20px}
+.fun-fact h4{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-family:'Plus Jakarta Sans',sans-serif}
+.fun-fact p{font-size:.92rem;color:var(--muted);line-height:1.75}
+
+/* GLASS CARD */
+.glass-card{background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:.25s;cursor:pointer}
+.glass-card:hover{transform:translateY(-4px);border-color:rgba(201,168,76,.4);box-shadow:0 8px 32px rgba(201,168,76,.12)}
+
+/* EXPERIENCE */
+.timeline{position:relative;padding-left:30px}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--gold),var(--border))}
+.timeline-item{position:relative;margin-bottom:32px}
+.timeline-item::before{content:'';position:absolute;left:-37px;top:28px;width:14px;height:14px;border-radius:50%;background:var(--gold);border:3px solid var(--bg)}
+.exp-card{background:var(--glass);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:.25s;cursor:pointer}
+.exp-card:hover{transform:translateY(-3px);border-color:rgba(201,168,76,.5);box-shadow:0 8px 32px rgba(201,168,76,.12)}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
+.exp-company{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.3rem;font-weight:700;color:var(--text)}
+.exp-duration{font-size:.82rem;color:var(--gold);font-weight:600;font-family:'Plus Jakarta Sans',sans-serif;background:rgba(201,168,76,.1);padding:4px 12px;border-radius:999px}
+.exp-role{font-size:.95rem;color:var(--gold-dark);font-weight:600;font-family:'Plus Jakarta Sans',sans-serif;margin-bottom:6px}
+.exp-desc{font-size:.9rem;color:var(--muted);margin-bottom:14px}
+.badge{display:inline-block;background:rgba(201,168,76,.12);color:var(--gold-dark);padding:4px 12px;border-radius:999px;font-size:.78rem;font-weight:600;font-family:'Plus Jakarta Sans',sans-serif;margin-right:6px;margin-bottom:4px}
+.click-hint{font-size:.78rem;color:var(--gold);font-family:'Plus Jakarta Sans',sans-serif;font-weight:500;margin-top:10px;opacity:.7}
+
+/* VOLUNTEERING */
+.vol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.vol-card{background:var(--glass);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:var(--radius);padding:28px;cursor:pointer;transition:.25s}
+.vol-card:hover{transform:translateY(-4px);border-color:rgba(201,168,76,.4);box-shadow:0 8px 32px rgba(201,168,76,.1)}
+.vol-icon{width:48px;height:48px;border-radius:50%;background:rgba(201,168,76,.12);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px}
+.vol-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:4px}
+.vol-sub{font-size:.83rem;color:var(--gold);font-weight:600;font-family:'Plus Jakarta Sans',sans-serif;margin-bottom:10px}
+.vol-text{font-size:.88rem;color:var(--muted);line-height:1.7}
+
+/* EDUCATION */
+.edu-timeline{position:relative}
+.edu-line{display:flex;align-items:stretch;gap:0}
+.edu-track{display:flex;flex-direction:column;align-items:center;width:48px;flex-shrink:0}
+.edu-dot{width:20px;height:20px;border-radius:50%;background:var(--gold);border:3px solid var(--bg);flex-shrink:0;z-index:1}
+.edu-line-seg{flex:1;width:2px;background:var(--gold-light);margin:4px 0}
+.edu-content{flex:1;padding:0 0 40px 24px}
+.edu-inst{font-size:.8rem;color:var(--gold);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-family:'Plus Jakarta Sans',sans-serif;margin-bottom:6px}
+.edu-degree{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:12px}
+.edu-text{font-size:.92rem;color:var(--muted);line-height:1.8;margin-bottom:16px}
+.pivot-box{background:var(--gold);color:#fff;border-radius:var(--radius);padding:28px;margin:8px 0 32px}
+.pivot-box h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:10px}
+.pivot-box p{font-size:.92rem;line-height:1.75;opacity:.9}
+.pullquote{border-left:4px solid var(--gold);padding:16px 20px;background:rgba(201,168,76,.06);border-radius:0 12px 12px 0;margin:16px 0;font-style:italic;color:var(--text);font-size:1rem}
+
+/* PROJECTS */
+.proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.proj-card{background:var(--glass);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:var(--radius);padding:28px;cursor:pointer;transition:.25s;position:relative;overflow:hidden}
+.proj-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold)}
+.proj-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(201,168,76,.14)}
+.proj-num{font-size:.75rem;color:var(--gold);font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:.1em;margin-bottom:8px}
+.proj-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:6px}
+.proj-sub{font-size:.85rem;color:var(--muted);margin-bottom:14px}
+.outcome-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(201,168,76,.1);color:var(--gold-dark);padding:5px 12px;border-radius:999px;font-size:.78rem;font-weight:600;font-family:'Plus Jakarta Sans',sans-serif}
+
+/* GTM HUB */
+.gtm-engine{background:var(--card);border-radius:var(--radius);padding:32px;margin-bottom:32px;border:1px solid var(--border)}
+.gtm-engine-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.gtm-stage{border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px;margin-bottom:12px;background:var(--bg);cursor:pointer;transition:.2s}
+.gtm-stage:hover{border-color:var(--gold-light)}
+.gtm-stage-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:600;display:flex;justify-content:space-between;align-items:center}
+.gtm-stage-body{font-size:.88rem;color:var(--muted);line-height:1.75;margin-top:12px;display:none}
+.gtm-stage.open .gtm-stage-body{display:block}
+.gtm-stage .arrow{transition:.25s;color:var(--gold)}
+.gtm-stage.open .arrow{transform:rotate(180deg)}
+.cta-box{border:1.5px solid var(--gold-light);border-radius:var(--radius-sm);padding:16px 20px;margin:16px 0;background:rgba(201,168,76,.04)}
+.cta-box p{font-size:.88rem;color:var(--muted);font-style:italic;margin-bottom:8px}
+.cta-link{font-family:'Plus Jakarta Sans',sans-serif;font-size:.85rem;font-weight:600;color:var(--gold);text-decoration:none;display:flex;align-items:center;gap:6px}
+.cta-icons{display:flex;gap:12px;margin-top:6px}
+.cta-icon{width:28px;height:28px;border-radius:50%;background:rgba(201,168,76,.1);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:14px;transition:.2s;border:1px solid var(--border)}
+.cta-icon:hover{background:var(--gold);color:#fff;border-color:var(--gold)}
+.tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tool-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;text-align:center;transition:.2s}
+.tool-card:hover{border-color:var(--gold-light)}
+.tool-icon{font-size:24px;margin-bottom:8px}
+.tool-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:.85rem;font-weight:700;margin-bottom:4px}
+.tool-desc{font-size:.75rem;color:var(--muted);margin-bottom:8px}
+.tool-badge{font-size:.72rem;font-weight:600;color:var(--gold-dark);background:rgba(201,168,76,.1);padding:2px 8px;border-radius:999px;font-family:'Plus Jakarta Sans',sans-serif}
+.books-list{display:flex;flex-direction:column;gap:20px}
+.book-item{display:flex;gap:20px;padding:20px;background:var(--bg);border-radius:var(--radius-sm);border:1px solid var(--border)}
+.book-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.8rem;font-weight:700;color:var(--gold-light);line-height:1;min-width:32px}
+.book-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:700;margin-bottom:4px}
+.book-para{font-size:.88rem;color:var(--muted);line-height:1.7;margin-bottom:8px}
+.book-for{font-size:.8rem;color:var(--gold-dark);font-weight:600;font-family:'Plus Jakarta Sans',sans-serif}
+.red-flags{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.flag-card{background:var(--bg);border-radius:var(--radius-sm);padding:20px;border-left:4px solid #E24B4A}
+.flag-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.flag-text{font-size:.85rem;color:var(--muted);line-height:1.7}
+
+/* ART GALLERY */
+.art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.art-card{height:320px;position:relative;perspective:1000px;cursor:pointer}
+.art-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
+.art-card.flipped .art-inner{transform:rotateY(180deg)}
+.art-front,.art-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:var(--radius);overflow:hidden}
+.art-back{transform:rotateY(180deg);background:var(--card);padding:24px;display:flex;flex-direction:column;justify-content:center;border:1px solid var(--border)}
+.art-front img,.art-front .art-ph{width:100%;height:100%;object-fit:cover}
+.art-ph{display:flex;align-items:flex-end;padding:16px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;font-weight:600;color:#fff;background:linear-gradient(135deg,var(--card),var(--gold-light))}
+.art-label-overlay{position:absolute;bottom:0;left:0;right:0;padding:14px 16px;background:linear-gradient(transparent,rgba(26,26,26,.7));color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;font-weight:600}
+.art-back h4{font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:700;margin-bottom:12px;color:var(--gold)}
+.art-back p{font-size:.85rem;color:var(--muted);line-height:1.7;flex:1}
+.art-back .feel{font-size:.82rem;font-style:italic;color:var(--gold-dark);margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}
+.art-hint{text-align:center;font-size:.8rem;color:var(--muted);margin-top:12px;font-style:italic}
+
+/* TRAVEL */
+.travel-grid{columns:3;gap:16px}
+.travel-item{break-inside:avoid;margin-bottom:16px;position:relative;border-radius:var(--radius-sm);overflow:hidden;cursor:pointer}
+.travel-item img{width:100%;display:block;transition:.3s}
+.travel-item .overlay{position:absolute;inset:0;background:rgba(26,26,26,0);transition:.3s;display:flex;align-items:flex-end;padding:12px}
+.travel-item:hover .overlay{background:rgba(26,26,26,.45)}
+.travel-item .loc{color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:.85rem;font-weight:600;opacity:0;transition:.3s;transform:translateY(4px)}
+.travel-item:hover .loc{opacity:1;transform:translateY(0)}
+.travel-item:hover img{transform:scale(1.06)}
+.travel-ph{background:var(--card);display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:.78rem;color:var(--muted);text-align:center;padding:12px}
+.travel-note{text-align:center;padding:24px;color:var(--muted);font-size:.9rem;font-style:italic;background:var(--card);border-radius:var(--radius);border:1px dashed var(--border)}
+
+/* MUSIC */
+.music-layout{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.vinyl-wrap{display:flex;flex-direction:column;align-items:center;gap:24px}
+.vinyl{width:200px;height:200px;border-radius:50%;background:radial-gradient(circle at 50%,#C9A84C 0%,#9B7A28 15%,#1a1a1a 15%,#2a2a2a 40%,#1a1a1a 40%,#2a2a2a 65%,#1a1a1a 65%,#111 100%);animation:spin 8s linear infinite;box-shadow:0 8px 32px rgba(0,0,0,.2)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.vinyl-paused{animation-play-state:paused}
+.spotify-embed{width:100%;border-radius:var(--radius-sm);overflow:hidden}
+.artists-cloud{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.artist-lg{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.3rem;font-weight:700;color:var(--text)}
+.artist-md{font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:600;color:var(--muted)}
+.artist-sm{font-family:'Plus Jakarta Sans',sans-serif;font-size:.85rem;font-weight:500;color:var(--border)}
+.dot-sep{color:var(--gold);font-size:.6rem}
+.festivals-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:32px}
+.festival-card{background:var(--text);color:#fff;border-radius:var(--radius-sm);padding:24px;position:relative;overflow:hidden}
+.festival-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold)}
+.festival-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:4px}
+.festival-loc{font-size:.82rem;color:rgba(255,255,255,.5);margin-bottom:10px;font-family:'Plus Jakarta Sans',sans-serif}
+.festival-line{font-size:.88rem;color:rgba(255,255,255,.7);line-height:1.6}
+
+/* FOOTER */
+footer{background:var(--text);color:#fff;padding:60px 80px;display:flex;justify-content:space-between;align-items:center}
+.footer-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:700}
+.footer-copy{font-size:.8rem;color:rgba(255,255,255,.4);margin-top:4px}
+.footer-icons{display:flex;gap:16px}
+.footer-icon{width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(201,168,76,.4);display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--gold);font-size:16px;transition:.2s}
+.footer-icon:hover{background:var(--gold);color:#fff;border-color:var(--gold)}
+.footer-icon svg{width:18px;height:18px;fill:currentColor}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--bg);border-radius:var(--radius);padding:40px;max-width:720px;width:100%;max-height:85vh;overflow-y:auto;position:relative}
+.modal-close{position:absolute;top:16px;right:16px;background:var(--card);border:none;width:32px;height:32px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:.2s}
+.modal-close:hover{background:var(--gold);color:#fff}
+.modal h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.5rem;font-weight:700;margin-bottom:6px}
+.modal .modal-sub{color:var(--gold);font-size:.9rem;font-weight:600;font-family:'Plus Jakarta Sans',sans-serif;margin-bottom:24px}
+.modal-section{margin-bottom:20px}
+.modal-section h4{font-family:'Plus Jakarta Sans',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.modal-section p,.modal-section li{font-size:.92rem;color:var(--muted);line-height:1.8}
+.modal-section ul{padding-left:18px}
+.modal-section li{margin-bottom:4px}
+.stat-row{display:flex;gap:16px;margin-top:16px;flex-wrap:wrap}
+.stat-pill{background:var(--card);border-radius:999px;padding:8px 16px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.85rem;font-weight:700;color:var(--gold-dark)}
+
+/* INTRO SECTION */
+.intro-strip{background:var(--card);border-radius:var(--radius);padding:24px 32px;margin-bottom:40px;border-left:4px solid var(--gold)}
+.intro-strip p{font-size:1rem;color:var(--muted);line-height:1.8}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  #hero{grid-template-columns:1fr;padding:60px 24px;gap:40px}
+  section{padding:60px 24px}
+  .about-grid,.music-layout,.vol-grid,.proj-grid,.tools-grid,.red-flags{grid-template-columns:1fr}
+  .art-grid{grid-template-columns:repeat(2,1fr)}
+  .travel-grid{columns:2}
+  .festivals-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:24px;padding:40px 24px;text-align:center}
+  .sidenav{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="hero-bg">
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+</div>
+
+<!-- SIDE NAV -->
+<nav class="sidenav" id="sidenav">
+  <a href="#hero" data-section="hero"><span class="label">Home</span><span class="dot"></span></a>
+  <a href="#about" data-section="about"><span class="label">About</span><span class="dot"></span></a>
+  <a href="#experience" data-section="experience"><span class="label">Experience</span><span class="dot"></span></a>
+  <a href="#education" data-section="education"><span class="label">Education</span><span class="dot"></span></a>
+  <a href="#projects" data-section="projects"><span class="label">Projects</span><span class="dot"></span></a>
+  <a href="#gtm" data-section="gtm"><span class="label">GTM Hub</span><span class="dot"></span></a>
+  <a href="#volunteering" data-section="volunteering"><span class="label">Community</span><span class="dot"></span></a>
+  <a href="#art" data-section="art"><span class="label">Art</span><span class="dot"></span></a>
+  <a href="#travel" data-section="travel"><span class="label">Travel</span><span class="dot"></span></a>
+  <a href="#music" data-section="music"><span class="label">Music</span><span class="dot"></span></a>
+</nav>
+
+<!-- HERO -->
+<section id="hero" style="padding:80px;max-width:none;margin:0">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+    <div class="hero-text">
+      <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.3rem,2.5vw,2rem);font-weight:700;color:var(--gold);margin-bottom:10px;line-height:1.2;letter-spacing:-.01em">The Story I'm Still Writing</p>
+      <h1 style="font-size:clamp(1.5rem,2.8vw,2.2rem);font-weight:600;margin-bottom:6px">Ankit Mishra</h1>
+      <p class="title">SaaS Sales Professional &amp; Management Consultant</p>
+      <p class="hero-tagline">"In business and in life, there is no 'too late' - only different starting lines. I believe success isn't about being objectively right; it's about finding the right perspective, the right pace, and the right timing for the problem at hand."</p>
+      <a class="btn" href="#about">Explore My Journey ↓</a>
+    </div>
+    <div class="hero-img">
+      <div class="photo-wrap">
+        <div class="photo-placeholder" style="padding:0;background:none">
+          <img src="profile.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top center" alt="Ankit Mishra">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <p class="section-title" style="font-size:clamp(2rem,4vw,3rem);margin-bottom:4px">Who I Am</p>
+  <p class="section-label" style="margin-bottom:40px;font-size:.85rem">About Me</p>
+  <div class="about-grid">
+    <div>
+      <p class="about-para">I find my flow at the intersection of technical complexity and human connection. Whether I'm diagnosing operational bottlenecks or architecting a new GTM strategy, my goal is the same: to translate 'technical speak' into simple, actionable solutions.</p>
+      <p class="about-para">I'm a firm believer that no problem is truly unsolvable - usually, the fix is just waiting to be discovered by someone willing to look at it from a different perspective. Let's connect and deep dive together.</p>
+      <div class="tags">
+        <span class="tag">Strategic Architect</span>
+        <span class="tag">Empathetic Problem-Solver</span>
+        <span class="tag">Pragmatic Optimist</span>
+        <span class="tag">Collaborative Lead</span>
+      </div>
+      <div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap">
+        <a href="https://www.linkedin.com/in/ankitmish/" target="_blank" class="btn" style="font-size:.85rem;padding:10px 20px;display:flex;align-items:center;gap:6px">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="mailto:connectankit430@gmail.com" class="btn" style="font-size:.85rem;padding:10px 20px;background:transparent;border:1.5px solid var(--gold);color:var(--gold-dark);display:flex;align-items:center;gap:6px">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+          Email Me
+        </a>
+        <a href="resume.pdf" download class="btn" style="font-size:.85rem;padding:10px 20px;background:transparent;border:1.5px solid var(--gold);color:var(--gold-dark);display:flex;align-items:center;gap:6px">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Resume
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="currently-box">
+        <h4>Currently</h4>
+        <p>Final stretch of my MSc at UCD Smurfit. Actively looking for Sales, GTM, Partner Strategy or Consulting opportunities in the Dublin market.</p>
+      </div>
+      <div class="fun-fact" style="margin-top:20px">
+        <h4>A little about me as a person</h4>
+        <p>I'm all about the energy - a vibe seeker and a vibe giver. You'll usually find me chasing a sunrise on a weekend hike, lost in the rhythm of a techno set, or seeking out new experiences that challenge my way of thinking. Meeting new people isn't just networking; it's an opportunity to see the world through a different lens. Curious about the professional side? Keep scrolling.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <p class="section-title" style="font-size:clamp(2rem,4vw,3rem);margin-bottom:4px">Career Journey</p>
+  <p class="section-label" style="margin-bottom:40px;font-size:.85rem">Experience</p>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="exp-card" onclick="openModal('modal-wx')">
+        <div class="exp-header">
+          <div>
+            <div class="exp-company">Whatfix</div>
+            <div class="exp-role">Account Executive - North America &amp; Global Alliances</div>
+          </div>
+          <span class="exp-duration">2 Years</span>
+        </div>
+        <p class="exp-desc">Digital Adoption Platform maximising ROI on software investments. Moved from partnerships to direct enterprise sales - owning the full revenue cycle across North America.</p>
+        <div><span class="badge">SPOT Award</span><span class="badge">116% of Target</span><span class="badge">Dell · UiPath · Amtrak</span></div>
+        <p class="click-hint">↗ Click to read the full story</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="exp-card" onclick="openModal('modal-hr')">
+        <div class="exp-header">
+          <div>
+            <div class="exp-company">HighRadius</div>
+            <div class="exp-role">Senior Solution Principal - Global Partner Alliance</div>
+          </div>
+          <span class="exp-duration">3 Years</span>
+        </div>
+        <p class="exp-desc">AI-powered Autonomous Finance for the Office of the CFO. Built the partnership engine from scratch - managing strategic alliances with Accenture and Genpact across Fortune 500 accounts.</p>
+        <div><span class="badge">2× President's Club</span><span class="badge">Fresher of the Year</span><span class="badge">$10M+ Pipeline</span></div>
+        <p class="click-hint">↗ Click to read the full story</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOLUNTEERING moved - see before Art section -->
+
+<!-- EDUCATION -->
+<section id="education">
+  <p class="section-title" style="font-size:clamp(2rem,4vw,3rem);margin-bottom:4px">Education</p>
+  <p class="section-label" style="margin-bottom:40px;font-size:.85rem">The Journey</p>
+  <div class="edu-timeline">
+    <div class="edu-line">
+      <div class="edu-track">
+        <div class="edu-dot"></div>
+        <div class="edu-line-seg"></div>
+      </div>
+      <div class="edu-content">
+        <div class="edu-inst">UCD Michael Smurfit Graduate Business School, Dublin</div>
+        <div class="edu-degree">MSc Management Consulting</div>
+        <p class="edu-text">I chose Smurfit specifically because the Management Consulting programme offered what an MBA couldn't: vertical expertise. I wanted to sharpen consultative sales experience into a professional consulting toolkit.</p>
+        <p class="edu-text">Five years of SaaS experience lets me look at a theoretical framework and immediately visualise its application. While others learn what the tool is, I'm figuring out how to deploy it to fix a broken GTM strategy.</p>
+        <p class="edu-text" style="font-weight:500;color:var(--text)">Where I'm headed: The intersection of Digital Transformation and GTM Strategy - helping businesses navigate complex problems that matter.</p>
+      </div>
+    </div>
+    <div class="edu-line">
+      <div class="edu-track">
+        <div class="edu-dot" style="background:var(--text)"></div>
+        <div class="edu-line-seg"></div>
+      </div>
+      <div class="edu-content">
+        <div class="pivot-box">
+          <h3>⚡ The Pivot Moment</h3>
+          <p>The transition wasn't a straight line. When I decided to pivot, the reaction was skepticism and genuine fear. My parents worried: how do you enter the business world with no formal training? The bridge was HighRadius - their internship stress-tested candidates across multiple functions. The verdict: built for GTM. My technical background gave me an immediate edge - translating a complex AI-powered fintech product into simple, value-driven language. I wasn't just selling. I was solutioning.</p>
+        </div>
+        <div class="pullquote">"Engineering gave me the blueprint to build the engines. Business school taught me how to drive them. Having both means I'm often the only person in the room who truly knows what's happening under the hood."</div>
+      </div>
+    </div>
+    <div class="edu-line">
+      <div class="edu-track">
+        <div class="edu-dot"></div>
+      </div>
+      <div class="edu-content">
+        <div class="edu-inst">KIIT University, India</div>
+        <div class="edu-degree">B.Tech - Mechanical Engineering</div>
+        <p class="edu-text">Engineering gave me a blueprint for thinking. The degree taught thermodynamics and fluid mechanics - but its real gift was the precision required to manage complex systems.</p>
+        <p class="edu-text">The spark didn't happen in a lecture hall - it happened in a workshop. Working on the Effi-Cycle project, designing a three-wheeled hybrid vehicle, I found myself drawn to the unit economics and business case for mass production. I didn't just want to build the machine. I wanted to build the business that brought it to the world.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <p class="section-title" style="font-size:clamp(2rem,4vw,3rem);margin-bottom:4px">What I've Built</p>
+  <p class="section-label" style="margin-bottom:40px;font-size:.85rem">Consulting Projects &amp; Case Competitions</p>
+  <div class="proj-grid">
+    <div class="proj-card" onclick="openModal('modal-wrxflo')">
+      <div class="proj-num">PROJECT 01</div>
+      <div class="proj-title">WrxFlo / Ivy Capital Partners</div>
+      <div class="proj-sub">Irish ERP platform · US Market Entry Strategy · Team Lead · 12 weeks</div>
+      <span class="outcome-badge">✦ Commercially Grounded Strategy Delivered</span>
+      <p class="click-hint" style="margin-top:14px">↗ Open case study</p>
+    </div>
+    <div class="proj-card" onclick="openModal('modal-rsm')">
+      <div class="proj-num">PROJECT 02</div>
+      <div class="proj-title">RSM Case Study Competition</div>
+      <div class="proj-sub">Digital Transformation &amp; GTM Roadmap · Lead Consultant</div>
+      <span class="outcome-badge">🥈 2nd Place out of 36 Teams</span>
+      <p class="click-hint" style="margin-top:14px">↗ Open case study</p>
+    </div>
+    <div class="proj-card" onclick="openModal('modal-foodbridge')">
+      <div class="proj-num">PROJECT 03</div>
+      <div class="proj-title">FoodBridge · INNOVA Europe 2026</div>
+      <div class="proj-sub">AI-powered food waste compliance · 1.5M SME restaurants · Team Lead</div>
+      <span class="outcome-badge">✦ Top 2 Finalist</span>
+      <p class="click-hint" style="margin-top:14px">↗ Open case study</p>
+    </div>
+    <div class="proj-card" onclick="openModal('modal-nexus')">
+      <div class="proj-num">PROJECT 04</div>
+      <div class="proj-title">Nexus Irish Whiskey · ISCG × Accenture</div>
+      <div class="proj-sub">International expansion · Open Innovation · 5 markets</div>
+      <span class="outcome-badge">✦ Strong Learning Experience</span>
+      <p class="click-hint" style="margin-top:14px">↗ Open case study</p>
+    </div>
+    <div class="proj-card" onclick="openModal('modal-onus')">
+      <div class="proj-num">PROJECT 05</div>
+      <div class="proj-title">OnUs · Reward &amp; Loyalty App</div>
+      <div class="proj-sub">Entrepreneurship Module · Working prototype built · CTO role</div>
+      <span class="outcome-badge">✦ Investor-Ready Pitch Delivered</span>
+      <p class="click-hint" style="margin-top:14px">↗ Open case study</p>
+    </div>
+    <div class="proj-card" onclick="openModal('modal-sos')">
+      <div class="proj-num">PROJECT 06</div>
+      <div class="proj-title">SOS Cookies</div>
+      <div class="proj-sub">Strategic expansion &amp; scaling · Operations roadmap · Dublin</div>
+      <span class="outcome-badge">✦ Actionable Strategy Delivered</span>
+      <p class="click-hint" style="margin-top:14px">↗ Open case study</p>
+    </div>
+  </div>
+</section>
+
+<!-- GTM HUB -->
+<section id="gtm">
+  <p class="section-title" style="font-size:clamp(2rem,4vw,3rem);margin-bottom:4px">Sharing What I've Learned</p>
+  <p class="section-label" style="margin-bottom:16px;font-size:.85rem">Sales &amp; GTM - A Glimpse</p>
+  <p style="color:var(--muted);margin-bottom:40px;font-size:1rem">Still learning every day, but here are some patterns and frameworks I've picked up along the way. Click any stage to expand.</p>
+
+  <div class="gtm-engine">
+    <div class="gtm-engine-title">⚙️ Engine 1 - The Direct Sales Machine</div>
+    <div class="gtm-stage" onclick="toggleStage(this)">
+      <div class="gtm-stage-title">Stage 1 - Precision Prospecting <span class="arrow">▾</span></div>
+      <div class="gtm-stage-body">
+        <p>The spray-and-pray era is dead. Enterprise prospecting is now an intelligence operation. Build your ICP on technographic fit, use intent data to time outreach, and map the org chart before you touch the phone.</p>
+        <br><p><strong>Role-Based Personalisation:</strong> New executive (0–6 months): message around quick wins and risk mitigation. Tenured executive: protecting their legacy. Functional leader: day-to-day friction and making their number. End user: the specific frustration they live every single day.</p>
+        <br><p><strong>Channels that work:</strong> LinkedIn (warm before you cold, comment for 2 weeks first), Cold Email (one idea per email, subject under 5 words), Cold Call (lead with a hypothesis, not a pitch), Loom video (converts 3–4× better than text).</p>
+        <div class="cta-box">
+          <p>Want a prospecting framework built for your specific ICP and market? I work with early-stage GTM teams on building surgical outbound engines.</p>
+          <div class="cta-icons">
+            <a class="cta-icon" href="https://www.linkedin.com/in/ankitmish/" target="_blank" title="LinkedIn">in</a>
+            <a class="cta-icon" href="mailto:connectankit430@gmail.com" title="Email">✉</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="gtm-stage" onclick="toggleStage(this)">
+      <div class="gtm-stage-title">Stage 2 - Discovery: ANOT Framework + Iceberg Model <span class="arrow">▾</span></div>
+      <div class="gtm-stage-body">
+        <p><strong>ANOT:</strong> Appreciation → News (reference something specific) → Objectives (build a mutual agenda) → Time (protect it).</p>
+        <br><p><strong>The Iceberg Model:</strong> Surface: "Our team wastes time on manual reporting." Root cause: "The CFO doesn't trust the numbers." Cost of inaction: "We missed a board presentation and now the CFO is questioning the entire tech stack."</p>
+        <br><p><strong>Questions that work:</strong> "Walk me through what a bad week looks like." / "What have you already tried - and why didn't it stick?" / "If this problem is still here in 18 months, what does that mean for you personally?"</p>
+        <br><p>End every discovery call with a Mutual Action Plan (MAP). This single habit separates sellers who control their pipeline from those who are controlled by it.</p>
+      </div>
+    </div>
+    <div class="gtm-stage" onclick="toggleStage(this)">
+      <div class="gtm-stage-title">Stage 3 - The Demo: Solution vs. Pain <span class="arrow">▾</span></div>
+      <div class="gtm-stage-body">
+        <p>Never demo a feature that doesn't solve a previously stated pain. Three acts: Before State (their words, their pain) → Transition Moment ("What if that three-day problem took twenty minutes?") → After State (only the relevant workflow).</p>
+        <br><p>The demo close: Never end with "Any questions?" End with "Based on what you've seen today, does this solve the problem we discussed?" Then stop talking. The silence belongs to them.</p>
+      </div>
+    </div>
+    <div class="gtm-stage" onclick="toggleStage(this)">
+      <div class="gtm-stage-title">Stage 4 - Proof of Concept: The Controlled Experiment <span class="arrow">▾</span></div>
+      <div class="gtm-stage-body">
+        <p>A PoC is not "let them poke around." It's a controlled experiment with a predetermined hypothesis and pre-agreed success metric. Run a Best-Case Scenario session upfront. Weekly check-ins are non-negotiable. Present their own data back to them at the readout.</p>
+      </div>
+    </div>
+    <div class="gtm-stage" onclick="toggleStage(this)">
+      <div class="gtm-stage-title">Stage 5 - Value Engineering &amp; Cost of Inaction <span class="arrow">▾</span></div>
+      <div class="gtm-stage-body">
+        <p>Not a slide deck - a collaborative exercise the customer builds with you. Quantify current state pain → model future state gain → calculate the cost of inaction (the most powerful number in the room) → show the payback period. A 6–9 month payback removes most CFO objections at a stroke.</p>
+        <div class="cta-box">
+          <p>I run Value Engineering workshops for GTM teams and founders building commercial narratives for enterprise sales or investor conversations.</p>
+          <div class="cta-icons">
+            <a class="cta-icon" href="https://www.linkedin.com/in/ankitmish/" target="_blank" title="LinkedIn">in</a>
+            <a class="cta-icon" href="mailto:connectankit430@gmail.com" title="Email">✉</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="gtm-stage" onclick="toggleStage(this)">
+      <div class="gtm-stage-title">Stage 6 - Negotiation &amp; Final Closing <span class="arrow">▾</span></div>
+      <div class="gtm-stage-body">
+        <p>Expand the pie before you split it. Tactical empathy: Labelling ("It seems like the budget timing is creating pressure..."), Mirroring (repeat last 2–3 words, then wait), Accusation Audit (address their objections before they raise them). Create urgency through their own business calendar - not artificial pressure.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="gtm-engine">
+    <div class="gtm-engine-title">🤝 Engine 2 - The Strategic Partnership Machine</div>
+    <div class="gtm-stage" onclick="toggleStage(this)">
+      <div class="gtm-stage-title">Phase 1 - Partner Identification &amp; Tiering <span class="arrow">▾</span></div>
+      <div class="gtm-stage-body">
+        <p><strong>Tier 1 - GSIs:</strong> Accenture, Deloitte, KPMG, TCS, Infosys. Deep integration, joint GTM, C-suite access in Fortune 500.</p>
+        <p><strong>Tier 2 - Regional SIs:</strong> Mid-size firms with deep industry specialisation. Faster to activate, closer to the client's day-to-day.</p>
+        <p><strong>Tier 3 - ISV Partners:</strong> Technical stickiness and expanded use cases.</p>
+        <br><p>Score partners on: ICP alignment, executive sponsorship, practice maturity, 12-month revenue potential, and competitive risk.</p>
+      </div>
+    </div>
+    <div class="gtm-stage" onclick="toggleStage(this)">
+      <div class="gtm-stage-title">Phase 2–3 - Onboarding &amp; Centre of Excellence <span class="arrow">▾</span></div>
+      <div class="gtm-stage-body">
+        <p>The most underinvested phase. Don't just sign an agreement and send credentials - run a structured Alliance Kickoff with a "first deal in 90 days" challenge. The CoE is not a training programme. It's a business-building engine that makes your partners commercially dangerous without you in the room.</p>
+        <div class="cta-box">
+          <p>I've built partner enablement frameworks from initial tiering through CoE design and joint GTM planning.</p>
+          <div class="cta-icons">
+            <a class="cta-icon" href="https://www.linkedin.com/in/ankitmish/" target="_blank">in</a>
+            <a class="cta-icon" href="mailto:connectankit430@gmail.com">✉</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="gtm-stage" onclick="toggleStage(this)">
+      <div class="gtm-stage-title">Phase 4–5 - Partner Marketing &amp; Co-Selling <span class="arrow">▾</span></div>
+      <div class="gtm-stage-body">
+        <p>The rule of partner marketing: attach yourself to their momentum, then amplify it. Use Crossbeam for account mapping - identify where your partner owns the account (warm intro opportunity), where you're in and they're not (value-add opportunity), and where both are in but misaligned (immediate alignment required).</p>
+      </div>
+    </div>
+    <div class="gtm-stage" onclick="toggleStage(this)">
+      <div class="gtm-stage-title">Phase 6 - Partner Success: Post-Sale Alignment <span class="arrow">▾</span></div>
+      <div class="gtm-stage-body">
+        <p>The most neglected phase - and the one that determines whether the partner brings you the next deal. Joint value realisation reports at 3 and 6 months. The expansion motion: a successful implementation is your best lead generation asset. The cost of the next sale is a fraction of the first.</p>
+        <div class="cta-box">
+          <p>Most partnerships stall because the post-sale motion isn't designed before the deal closes. If you're building a partner success playbook, let's talk.</p>
+          <div class="cta-icons">
+            <a class="cta-icon" href="https://www.linkedin.com/in/ankitmish/" target="_blank">in</a>
+            <a class="cta-icon" href="mailto:connectankit430@gmail.com">✉</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Red Flags -->
+  <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:20px">Deal Guardrails - The Red Flag Stress Tests</h3>
+  <div class="red-flags">
+    <div class="flag-card"><div class="flag-title">🚩 Champion vs. Coach Test</div><p class="flag-text">Ask your champion to introduce you to the Economic Buyer. If they hesitate, they are a Coach - friendly, but powerless. A true Champion pulls you upward into the organisation.</p></div>
+    <div class="flag-card"><div class="flag-title">🚩 Silence After the Demo</div><p class="flag-text">If the prospect stops asking "how does this work?" and starts asking "what happens if we don't do this?" - you're winning. Silence after a great demo means someone has an unshared objection.</p></div>
+    <div class="flag-card"><div class="flag-title">🚩 The Procurement Surprise</div><p class="flag-text">If the first time you hear from Legal is the week the deal should close, your deal is at risk. Introduce yourself to procurement early - not as an adversary at the finish line.</p></div>
+    <div class="flag-card"><div class="flag-title">🚩 The Internal Salesperson Check</div><p class="flag-text">Can your champion explain your Value Engineering deck in their own words? If they can't articulate ROI and cost of inaction, they cannot sell it to the CFO when you're not in the room.</p></div>
+    <div class="flag-card"><div class="flag-title">🚩 The Single-Threaded Deal</div><p class="flag-text">One contact = zero deals, just a conversation. Enterprise deals require multi-threading. If your champion leaves the company, your deal should not die with them.</p></div>
+    <div class="flag-card"><div class="flag-title">🚩 The Paper Process Surprise</div><p class="flag-text">Every large enterprise has an internal approval process above a certain spend threshold. Map it in your first commercial conversation, not the week you're trying to close.</p></div>
+  </div>
+  <div class="cta-box" style="margin-top:24px">
+    <p>These guardrails come from real deals - some won, some lost, all instructive. Running a live enterprise deal and want a second opinion?</p>
+    <div class="cta-icons">
+      <a class="cta-icon" href="https://www.linkedin.com/in/ankitmish/" target="_blank">in</a>
+      <a class="cta-icon" href="mailto:connectankit430@gmail.com">✉</a>
+    </div>
+  </div>
+
+  <!-- Tool Stack -->
+  <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.3rem;font-weight:700;margin:40px 0 20px">The Tool Stack</h3>
+  <div class="tools-grid">
+    <div class="tool-card"><div class="tool-icon">📊</div><div class="tool-name">Salesforce</div><div class="tool-desc">Pipeline &amp; forecast management</div></div>
+    <div class="tool-card"><div class="tool-icon">🎙</div><div class="tool-name">Gong.io</div><div class="tool-desc">Conversation intelligence</div></div>
+    <div class="tool-card"><div class="tool-icon">📨</div><div class="tool-name">Outreach / Salesloft</div><div class="tool-desc">Multi-touch sequencing</div></div>
+    <div class="tool-card"><div class="tool-icon">🔗</div><div class="tool-name">Crossbeam</div><div class="tool-desc">Partner account mapping</div></div>
+    <div class="tool-card"><div class="tool-icon">🧠</div><div class="tool-name">ChatGPT + Perplexity</div><div class="tool-desc">AI-powered research</div></div>
+    <div class="tool-card"><div class="tool-icon">📄</div><div class="tool-name">10-K / Earnings</div><div class="tool-desc">Executive intelligence</div></div>
+    <div class="tool-card"><div class="tool-icon">🤝</div><div class="tool-name">Sandler + Voss</div><div class="tool-desc">Negotiation frameworks</div></div>
+    <div class="tool-card"><div class="tool-icon">🔍</div><div class="tool-name">LinkedIn Sales Nav</div><div class="tool-desc">Ecosystem intelligence</div></div>
+  </div>
+
+  <!-- Books -->
+  <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.3rem;font-weight:700;margin:40px 0 4px">The 10/10 Shelf</h3>
+  <p style="color:var(--muted);font-size:.9rem;margin-bottom:20px">These books will help anyone get started in sales.</p>
+  <div class="books-list">
+    <div class="book-item"><div class="book-num">01</div><div><div class="book-title">Never Split the Difference - Chris Voss</div><p class="book-para">Negotiation is not a logic problem - it's an emotional one. Tactical empathy, labelling, and the counterintuitive power of "no." The mirroring technique alone has saved deals that logic and spreadsheets could not.</p><div class="book-for">Best for: Anyone in enterprise sales, alliances, or commercial leadership</div></div></div>
+    <div class="book-item"><div class="book-num">02</div><div><div class="book-title">The Challenger Sale - Dixon &amp; Adamson</div><p class="book-para">The best performers don't lead with relationships - they lead with insight. They teach customers something new about their own business. This is the book that made "consultative selling" mean something specific.</p><div class="book-for">Best for: AEs moving from transactional to strategic selling</div></div></div>
+    <div class="book-item"><div class="book-num">03</div><div><div class="book-title">SPIN Selling - Neil Rackham</div><p class="book-para">In complex B2B sales, the quality of your questions matters infinitely more than the quality of your pitch. Situation → Problem → Implication → Need-Payoff is a diagnostic model, not a script.</p><div class="book-for">Best for: Anyone in a discovery-heavy sales cycle</div></div></div>
+    <div class="book-item"><div class="book-num">04</div><div><div class="book-title">Founding Sales - Pete Kazanjy</div><p class="book-para">The most underrated sales book ever written. Operational, honest, written for builders rather than theorists. The book someone should give you on your first day in SaaS, but almost never does.</p><div class="book-for">Best for: Founders, early-stage AEs, career switchers entering B2B SaaS</div></div></div>
+    <div class="book-item"><div class="book-num">05</div><div><div class="book-title">Gap Selling - Keenan</div><p class="book-para">The gap between a prospect's current state and desired future state is where your value lives. If you can't define that gap with precision, you cannot close with confidence.</p><div class="book-for">Best for: AEs sharpening discovery and value articulation in competitive deals</div></div></div>
+    <div class="book-item"><div class="book-num">06</div><div><div class="book-title">Fanatical Prospecting - Jeb Blount</div><p class="book-para">Pipeline cures everything. The most elegant sales process in the world is worthless without enough top-of-funnel activity. The discomfort of accepting that relentless prospecting is non-negotiable is the point.</p><div class="book-for">Best for: SDRs, BDRs, and any AE whose pipeline is thinner than their comfort admits</div></div></div>
+  </div>
+  <div class="cta-box" style="margin-top:24px">
+    <p>Share what book has helped you succeed? I'd love to hear what's shaped your thinking.</p>
+    <div class="cta-icons">
+      <a class="cta-icon" href="https://www.linkedin.com/in/ankitmish/" target="_blank">in</a>
+      <a class="cta-icon" href="mailto:connectankit430@gmail.com">✉</a>
+    </div>
+  </div>
+</section>
+
+<!-- VOLUNTEERING -->
+<section id="volunteering">
+  <p class="section-title" style="font-size:clamp(2rem,4vw,3rem);margin-bottom:4px">Beyond the Work</p>
+  <p class="section-label" style="margin-bottom:28px;font-size:.85rem">Volunteering &amp; Community</p>
+  <div class="intro-strip">
+    <p>Wherever I've lived, I've tried to leave it a little better than I found it. Not out of obligation - but because I genuinely believe that the most interesting people are the ones who show up for something bigger than themselves.</p>
+  </div>
+  <div class="vol-grid">
+    <div class="vol-card" onclick="openModal('modal-pendulum')">
+      <div class="vol-icon">🎤</div>
+      <div class="vol-title">Pendulum Summit</div>
+      <div class="vol-sub">Volunteer · Dublin, Ireland</div>
+      <p class="vol-text">One of Europe's largest business and personal development conferences. Volunteering here put me in the room with extraordinary people.</p>
+      <p class="click-hint" style="font-size:.78rem;color:var(--gold);font-family:'Plus Jakarta Sans',sans-serif;margin-top:10px">↗ Read more</p>
+    </div>
+    <div class="vol-card" onclick="openModal('modal-beach')">
+      <div class="vol-icon">🌊</div>
+      <div class="vol-title">Beach Clean-Up</div>
+      <div class="vol-sub">Team Lead · 80 Volunteers · Dublin</div>
+      <p class="vol-text">Led a team of 80 volunteers across a coastal clean-up operation. Logistics, motivation, execution - and a cleaner shoreline at the end of it.</p>
+      <p class="click-hint" style="font-size:.78rem;color:var(--gold);font-family:'Plus Jakarta Sans',sans-serif;margin-top:10px">↗ Read more</p>
+    </div>
+    <div class="vol-card" onclick="openModal('modal-rotary')">
+      <div class="vol-icon">🔄</div>
+      <div class="vol-title">Rotary Club</div>
+      <div class="vol-sub">Active Member · Odisha, India</div>
+      <p class="vol-text">Consistent, unglamorous, meaningful community service. The work wasn't about visibility. It was about showing up, week after week.</p>
+      <p class="click-hint" style="font-size:.78rem;color:var(--gold);font-family:'Plus Jakarta Sans',sans-serif;margin-top:10px">↗ Read more</p>
+    </div>
+  </div>
+  <p style="text-align:center;margin-top:32px;color:var(--muted);font-style:italic;font-size:.92rem">I'm always looking for the next initiative worth joining - in Dublin, or wherever I happen to be.</p>
+</section>
+
+<!-- ART -->
+<section id="art">
+  <p class="section-title" style="font-size:clamp(2rem,4vw,3rem);margin-bottom:4px">How I See the World</p>
+  <p class="section-label" style="margin-bottom:16px;font-size:.85rem">Art Gallery</p>
+  <p style="color:var(--muted);margin-bottom:12px;max-width:600px">I've never been able to explain why I paint. I just know that certain things, a face, a feeling, a moment of stillness, refuse to stay only in my head.</p>
+  <p class="art-hint" style="text-align:left;margin-bottom:32px">↓ Click to flip each card and reveal the story</p>
+  <div class="art-grid">
+    <div class="art-card" onclick="this.classList.toggle('flipped')">
+      <div class="art-inner">
+        <div class="art-front">
+          <div class="art-ph" style="height:320px;background:linear-gradient(135deg,#7BAF9E,#4A8C7E,#2A6B5E)">
+            <div style="color:rgba(255,255,255,.9)">🖼 Seasons.jpeg<br><small>Replace with your painting</small></div>
+          </div>
+          <div class="art-label-overlay">Seasons · Acrylic on canvas</div>
+        </div>
+        <div class="art-back">
+          <h4>Seasons</h4>
+          <p>One tree. Three lives. Spring generous with colour, autumn burning before it lets go, winter stripped of everything but its structure. I've always believed that what survives the bare season is what was real to begin with.</p>
+          <p class="feel">What I want you to feel: That change isn't loss. It's just the tree, being honest about where it is.</p>
+        </div>
+      </div>
+    </div>
+    <div class="art-card" onclick="this.classList.toggle('flipped')">
+      <div class="art-inner">
+        <div class="art-front">
+          <div class="art-ph" style="height:320px;background:linear-gradient(135deg,#1a3a8f,#2652c7,#5b84e8)">
+            <div style="color:rgba(255,255,255,.9)">🖼 Shiva.jpeg<br><small>Replace with your painting</small></div>
+          </div>
+          <div class="art-label-overlay">Shiva · Watercolour &amp; ink wash</div>
+        </div>
+        <div class="art-back">
+          <h4>Shiva</h4>
+          <p>I painted this entirely in blue - not because blue is sacred, but because that's the colour that felt right for stillness. Eyes closed. Crescent above. The world happening somewhere outside the frame, and none of it mattering.</p>
+          <p class="feel">What I want you to feel: Quiet. Just for a second.</p>
+        </div>
+      </div>
+    </div>
+    <div class="art-card" onclick="this.classList.toggle('flipped')">
+      <div class="art-inner">
+        <div class="art-front">
+          <div class="art-ph" style="height:320px;background:linear-gradient(135deg,#c0392b,#e74c3c,#f39c12,#1a1a1a)">
+            <div style="color:rgba(255,255,255,.9)">🖼 Therapy.jpeg<br><small>Replace with your painting</small></div>
+          </div>
+          <div class="art-label-overlay">Therapy · Acrylic, expressive</div>
+        </div>
+        <div class="art-back">
+          <h4>Therapy</h4>
+          <p>COVID locked the world down and locked a lot of things inside it. I couldn't travel. I couldn't move. So I painted - loudly, messily, with no plan and no apology. The title isn't ironic. It genuinely was.</p>
+          <p class="feel">What I want you to feel: Permission to make something imperfect and call it enough.</p>
+        </div>
+      </div>
+    </div>
+    <div class="art-card" onclick="this.classList.toggle('flipped')">
+      <div class="art-inner">
+        <div class="art-front">
+          <div class="art-ph" style="height:320px;background:linear-gradient(135deg,#f5f5f0,#e8e8e0,#d0d0c0)">
+            <div style="color:var(--muted)">🖼 Mandala.jpeg<br><small>Replace with your painting</small></div>
+          </div>
+          <div class="art-label-overlay">Mandala · Pen &amp; ink</div>
+        </div>
+        <div class="art-back">
+          <h4>Mandala</h4>
+          <p>I had never tried Mandala art before this. No reference point, no prior practice - just curiosity and a pen. There's something quietly satisfying about attempting a form for the first time and discovering that you actually enjoy it.</p>
+          <p class="feel">What I want you to feel: That beginnings don't need to be perfect. They just need to be started.</p>
+        </div>
+      </div>
+    </div>
+    <div class="art-card" onclick="this.classList.toggle('flipped')" style="grid-column:span 2">
+      <div class="art-inner" style="height:320px">
+        <div class="art-front">
+          <div class="art-ph" style="height:320px;background:linear-gradient(135deg,#f0c040,#e8a820,#d49010)">
+            <div style="color:rgba(255,255,255,.9)">🖼 Ride On.jpeg<br><small>Replace with your painting</small></div>
+          </div>
+          <div class="art-label-overlay">Ride On · Acrylic on canvas</div>
+        </div>
+        <div class="art-back">
+          <h4>Ride On</h4>
+          <p>I was watching Welcome - if you know Bollywood, you know exactly the kind of chaos and comedy that film delivers - and somewhere between laughing at the screen, I just picked up a brush. Some of my favourite things have been made for no serious reason at all.</p>
+          <p class="feel">What I want you to feel: That not everything needs a deeper meaning. Sometimes joy is the whole point.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAVEL -->
+<section id="travel">
+  <p class="section-title" style="font-size:clamp(2rem,4vw,3rem);margin-bottom:4px">Wherever Next</p>
+  <p class="section-label" style="margin-bottom:16px;font-size:.85rem">Travel Gallery</p>
+  <p style="color:var(--muted);margin-bottom:32px;max-width:600px">I travel the way I do most things - with curiosity first and a plan second. Business trips that turn into weekend detours, meals ordered by pointing at the menu and hoping for the best.</p>
+  <div class="travel-grid" id="travelGrid">
+    <div class="travel-item"><img src="t1.jpeg" alt="Cliffs of Moher, Ireland" loading="lazy"><div class="overlay"><span class="loc">Cliffs of Moher, Ireland</span></div></div>
+    <div class="travel-item"><img src="t4.jpeg" alt="Aran Islands, Ireland" loading="lazy"><div class="overlay"><span class="loc">Aran Islands, Ireland</span></div></div>
+    <div class="travel-item"><img src="t5.jpeg" alt="New York, USA" loading="lazy"><div class="overlay"><span class="loc">DUMBO, New York</span></div></div>
+    <div class="travel-item"><img src="t3.jpeg" alt="Northern Lights" loading="lazy"><div class="overlay"><span class="loc">Northern Lights, Iceland</span></div></div>
+    <div class="travel-item"><img src="t7.jpeg" alt="Times Square, New York" loading="lazy"><div class="overlay"><span class="loc">Times Square, New York</span></div></div>
+    <div class="travel-item"><img src="t11.jpeg" alt="Himachal Pradesh, India" loading="lazy"><div class="overlay"><span class="loc">Himachal Pradesh, India</span></div></div>
+    <div class="travel-item"><img src="t2.jpeg" alt="Manali, India" loading="lazy"><div class="overlay"><span class="loc">Manali, India</span></div></div>
+    <div class="travel-item"><img src="t8.jpeg" alt="Greenwich Village, New York" loading="lazy"><div class="overlay"><span class="loc">Greenwich Village, New York</span></div></div>
+    <div class="travel-item"><img src="t12.jpeg" alt="Mountains, India" loading="lazy"><div class="overlay"><span class="loc">Himachal Pradesh, India</span></div></div>
+    <div class="travel-item"><img src="t10.jpeg" alt="Waterfall, India" loading="lazy"><div class="overlay"><span class="loc">Jogini Falls, Manali</span></div></div>
+    <div class="travel-item"><img src="t6.jpeg" alt="New York" loading="lazy"><div class="overlay"><span class="loc">Empire State, New York</span></div></div>
+    <div class="travel-item"><img src="t9.jpeg" alt="Misty Hills, India" loading="lazy"><div class="overlay"><span class="loc">Odisha, India</span></div></div>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:2000;align-items:center;justify-content:center;flex-direction:column" onclick="closeLightbox(event)">
+    <button onclick="document.getElementById('lightbox').style.display='none'" style="position:absolute;top:20px;right:24px;background:none;border:none;color:#fff;font-size:28px;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif">✕</button>
+    <button onclick="moveLight(-1)" style="position:absolute;left:20px;background:none;border:none;color:#fff;font-size:36px;cursor:pointer">‹</button>
+    <img id="lightbox-img" src="" style="max-height:85vh;max-width:90vw;border-radius:12px;object-fit:contain">
+    <button onclick="moveLight(1)" style="position:absolute;right:20px;background:none;border:none;color:#fff;font-size:36px;cursor:pointer">›</button>
+  </div>
+</section>
+
+<!-- MUSIC -->
+<section id="music">
+  <p class="section-title" style="font-size:clamp(2rem,4vw,3rem);margin-bottom:4px">The Frequency</p>
+  <p class="section-label" style="margin-bottom:16px;font-size:.85rem">The Soundtrack</p>
+  <p style="color:var(--muted);margin-bottom:40px;max-width:600px">I discovered electronic music not as background noise but as an experience - something that happens to your whole body, not just your ears.</p>
+  <div class="music-layout">
+    <div class="vinyl-wrap">
+      <!-- Record Player -->
+      <div id="record-player" style="position:relative;width:240px;height:260px;margin:0 auto">
+        <!-- Base -->
+        <div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:220px;height:20px;background:#2a1f0e;border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,.3)"></div>
+        <!-- Platter -->
+        <div style="position:absolute;bottom:14px;left:50%;transform:translateX(-50%);width:200px;height:200px;border-radius:50%;background:#1a1209;box-shadow:0 2px 16px rgba(0,0,0,.4)">
+          <!-- Vinyl record -->
+          <div id="vinyl-disc" style="width:100%;height:100%;border-radius:50%;background:conic-gradient(#111 0deg,#1a1a1a 2deg,#111 4deg,#1a1a1a 6deg,#111 8deg,#1a1a1a 10deg,#111 12deg,#1a1a1a 14deg,#111 16deg,#1a1a1a 18deg,#111 20deg,#1a1a1a 22deg,#111 24deg,#222 25deg,#222 360deg);animation:spin 4s linear infinite;animation-play-state:paused;position:relative">
+            <!-- Label -->
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:radial-gradient(circle,var(--gold) 0%,var(--gold-dark) 100%);display:flex;align-items:center;justify-content:center">
+              <div style="width:8px;height:8px;border-radius:50%;background:#1a1a1a"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Tonearm base pivot -->
+        <div style="position:absolute;top:16px;right:8px;width:18px;height:18px;border-radius:50%;background:var(--gold);z-index:10;box-shadow:0 2px 6px rgba(0,0,0,.3)"></div>
+        <!-- Tonearm -->
+        <div id="tonearm" style="position:absolute;top:22px;right:14px;width:130px;height:3px;background:linear-gradient(to left,#8B6914,var(--gold));transform-origin:right center;transform:rotate(-28deg);z-index:9;border-radius:2px;transition:transform 1.2s cubic-bezier(.4,0,.2,1)">
+          <!-- Headshell -->
+          <div style="position:absolute;left:-4px;top:-5px;width:14px;height:12px;background:#8B6914;border-radius:3px 3px 2px 2px;transform:rotate(15deg)"></div>
+        </div>
+      </div>
+
+      <!-- Play button -->
+      <a id="spotify-play-btn" href="https://open.spotify.com/playlist/6IedZoicso4q7kbAX8ZARD?si=1LKRHlL3RmOb0zpB6Cpbtg" target="_blank"
+        style="display:inline-flex;align-items:center;gap:10px;background:#1DB954;color:#fff;padding:12px 24px;border-radius:999px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:.95rem;text-decoration:none;transition:.2s;box-shadow:0 4px 16px rgba(29,185,84,.3);cursor:pointer"
+        onmouseover="this.style.background='#1ed760';this.style.transform='translateY(-1px)'"
+        onmouseout="this.style.background='#1DB954';this.style.transform=''"
+        onclick="startVinyl()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+        Play on Spotify
+      </a>
+    </div>
+    <div>
+
+    </div>
+  </div>
+
+  <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.3rem;font-weight:700;margin:48px 0 8px">Where I've Been &amp; Where I Want To Be</h3>
+  <p style="color:var(--muted);margin-bottom:24px;font-size:.92rem">There's a particular kind of freedom that only exists in a field at 2am with 50,000 people and a sound system you feel in your chest. If any of these are on your list - <strong>hit me up.</strong></p>
+  <div class="festivals-grid">
+    <div class="festival-card" style="padding:16px 20px"><div class="festival-name" style="font-size:1rem">Tomorrowland</div><div class="festival-loc" style="margin-bottom:0">Boom, Belgium</div></div>
+    <div class="festival-card" style="padding:16px 20px"><div class="festival-name" style="font-size:1rem">Electric Picnic</div><div class="festival-loc" style="margin-bottom:0">Stradbally, Ireland</div></div>
+    <div class="festival-card" style="padding:16px 20px"><div class="festival-name" style="font-size:1rem">Awakenings</div><div class="festival-loc" style="margin-bottom:0">Amsterdam, Netherlands</div></div>
+    <div class="festival-card" style="padding:16px 20px"><div class="festival-name" style="font-size:1rem">DGTL Amsterdam</div><div class="festival-loc" style="margin-bottom:0">Amsterdam, Netherlands</div></div>
+    <div class="festival-card" style="padding:16px 20px"><div class="festival-name" style="font-size:1rem">Origin Festival</div><div class="festival-loc" style="margin-bottom:0">United Kingdom</div></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-name">Ankit Mishra</div>
+    <div class="footer-copy">© 2025 · All rights reserved</div>
+  </div>
+  <div class="footer-icons">
+    <a class="footer-icon" href="https://www.linkedin.com/in/ankitmish/" target="_blank" title="LinkedIn">
+      <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+    <a class="footer-icon" href="mailto:connectankit430@gmail.com" title="Email">
+      <svg viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+    </a>
+    <a class="footer-icon" href="resume.pdf" download title="Download Resume">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    </a>
+  </div>
+</footer>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="modal-hr" onclick="closeModalOnBg(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-hr')">✕</button>
+    <h2>HighRadius</h2>
+    <div class="modal-sub">Senior Solution Principal - Global Partner Alliance · 3 Years</div>
+    <div class="modal-section"><h4>The Context</h4><p>Joined a newly formed Global Alliance team reporting directly to the VP. Mission: build the partnership engine from scratch - onboarding, strategy, and management of global strategic partners.</p></div>
+    <div class="modal-section"><h4>The Roles I Wore</h4><p>Architect and operator simultaneously. Managed strategic giants including Accenture and Genpact, negotiated SLAs, and ran joint account planning for Fortune 500 prospects including Google and Cisco.</p></div>
+    <div class="modal-section"><h4>Hardest Challenge</h4><p>Managing the Accenture relationship solo. Frequently on update calls directly with the CEO. The pressure was immense - but it was a masterclass in executive communication and accountability.</p></div>
+    <div class="modal-section"><h4>Proudest Moment</h4><p>A tie. Closing the Wesco International deal at 11:45 PM on New Year's Eve - and seeing 2 of the 3 interns I mentored secure full-time offers.</p></div>
+    <div class="modal-section"><h4>The Lesson</h4><p>Curiosity is your greatest asset. Apply first principles, find the root cause, hold yourself accountable - you will always rise above mediocrity.</p></div>
+    <div class="stat-row"><span class="stat-pill">$10M+ Pipeline Generated</span><span class="stat-pill">110% of $4M Quota (2020)</span><span class="stat-pill">2× President's Club</span></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-wx" onclick="closeModalOnBg(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-wx')">✕</button>
+    <h2>Whatfix</h2>
+    <div class="modal-sub">Account Executive - North America &amp; Global Alliances · 2 Years</div>
+    <div class="modal-section"><h4>The Pivot</h4><p>Moving from Partnership Management to Direct Sales was a steep climb. Had to unlearn the indirect approach and relearn direct hunting - orchestrating the full internal village: Solution Engineers, Value Engineers, and RFP teams.</p></div>
+    <div class="modal-section"><h4>High-Growth Reality</h4><p>In fast-paced SaaS, you own every inch of the goal. Learned to articulate the cost of doing nothing to CXOs, making the value proposition undeniable.</p></div>
+    <div class="modal-section"><h4>Strategic Win</h4><p>Engineered a niche market entry into Product Lifecycle Management (PLM) platforms - creating 10 joint opportunities in just 90 days.</p></div>
+    <div class="modal-section"><h4>Why the Master's</h4><p>I could sell the solution. I wanted to be the one architecting the broader strategy. To move from executing a playbook to writing one.</p></div>
+    <div class="modal-section"><h4>The Lesson</h4><p>Master the frameworks - MEDDPICC, Sandler, Value Selling - but never lose the human element of no-oriented questioning.</p></div>
+    <div class="stat-row"><span class="stat-pill">116% of Target (2023)</span><span class="stat-pill">Dell · UiPath · Amtrak</span><span class="stat-pill">SPOT Award</span></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-pendulum" onclick="closeModalOnBg(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-pendulum')">✕</button>
+    <h2>Pendulum Summit</h2>
+    <div class="modal-sub">Volunteer · Dublin, Ireland</div>
+    <div class="modal-section"><p>Pendulum Summit is one of Europe's largest business and personal development conferences, bringing together world-class speakers, leaders, and thinkers in Dublin every year. Volunteering here put me in the room with extraordinary people - and reminded me that showing up with energy and intent, even without a ticket, gets you further than most.</p></div>
+    <div class="modal-section"><h4>What it gave me</h4><p>Perspective. And a very good reason to be in that room.</p></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-beach" onclick="closeModalOnBg(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-beach')">✕</button>
+    <h2>Beach Clean-Up, Dublin</h2>
+    <div class="modal-sub">Team Lead · 80 Volunteers</div>
+    <div class="modal-section"><p>I didn't just show up for this one - I led it. Coordinating a team of 80 volunteers across a beach clean-up operation in Dublin was one of those experiences that reminds you how much gets done when people simply decide to care. Logistics, motivation, execution - and at the end of it, a cleaner shoreline and a group of strangers who felt like a team.</p></div>
+    <div class="modal-section"><h4>What it gave me</h4><p>Proof that leadership doesn't need a job title. It just needs someone willing to organise the chaos.</p></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-rotary" onclick="closeModalOnBg(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-rotary')">✕</button>
+    <h2>Rotary Club</h2>
+    <div class="modal-sub">Active Member · Odisha, India</div>
+    <div class="modal-section"><p>Being an active member of the Rotary Club grounded me in something that fast-paced professional life rarely offers - consistent, unglamorous, meaningful community service. The work wasn't about visibility. It was about showing up, week after week, for the people and causes that needed it.</p></div>
+    <div class="modal-section"><h4>What it gave me</h4><p>A habit of contribution that I've carried into every city I've lived in since.</p></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-wrxflo" onclick="closeModalOnBg(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-wrxflo')">✕</button>
+    <h2>WrxFlo / Ivy Capital Partners</h2>
+    <div class="modal-sub">US Market Entry Strategy · Team Lead · 12 Weeks</div>
+    <div class="modal-section"><h4>The Client's Problem</h4><p>WrxFlo is a Limerick-based B2B SaaS company with €3.5M ARR and €3M in pre-Series A funding. Mandate: expand into the US and reach €10M ARR. No US brand recognition, no US customers, and an unoperationalised Dell Technologies partnership.</p></div>
+    <div class="modal-section"><h4>My Contribution</h4><p>Primary analytical lead and delivery owner. Built the nine-tab strategy workbook, geographic market selection research, 20 enriched US target accounts, Dell partner activation framework, and all three presentation decks including the board-ready final.</p></div>
+    <div class="modal-section"><h4>The Hardest Challenge</h4><p>The Dell activation model. How do you make 10,000 hardware-quota-carrying reps voluntarily introduce a pre-revenue Irish SaaS company? The three-pillar answer: ISV registration, Solution Incentive Programme tying WrxFlo deals to quota retirement, and a red account recovery strategy.</p></div>
+    <div class="modal-section"><h4>The Recommendation</h4><p>A blended two-engine GTM: Engine 1 targeting mid-market manufacturers via direct outbound in modular construction (Blue Ocean vertical). Engine 2 targeting enterprise accounts via Dell co-sell. Texas Tier 1, South Carolina Tier 2, Ohio Phase 2.</p></div>
+    <div class="modal-section"><h4>Client Reaction</h4><p>Ivy Capital described the work as one of the most commercially grounded pieces of student consulting they had seen. Tim Crowe was particularly engaged by the Dell activation model.</p></div>
+    <div class="modal-section"><h4>What I Learned</h4><p>Frameworks only matter if they change behaviour. Write as if you won't be in the room. And always be explicit about assumptions - false certainty is worse than honest uncertainty.</p></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-foodbridge" onclick="closeModalOnBg(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-foodbridge')">✕</button>
+    <h2>FoodBridge</h2>
+    <div class="modal-sub">INNOVA Europe 2026 · Top 2 Finalist · Team Lead</div>
+    <div class="modal-section"><h4>The Problem</h4><p>60 million tonnes of EU food waste annually while 40 million EU citizens cannot afford a quality meal every second day. The EU Waste Framework Directive (2025) mandates 30% restaurant food waste reduction by 2030 - binding, enforceable, with fines up to €500,000. Existing solutions start at €12–18K/year, pricing out the 1.5 million SME restaurants the law targets.</p></div>
+    <div class="modal-section"><h4>The Founding Insight</h4><p>The compliance burden is the opportunity. Reframed the question from "how do we convince restaurants to care?" to "how do we give them the cheapest, most friction-free path to compliance?"</p></div>
+    <div class="modal-section"><h4>Business Model</h4><ul><li>Transaction commission: €0.80–1.20 per surplus bag moved</li><li>Consumer surplus marketplace: €3–5 bags via app</li><li>Compliance SaaS: €89–149/venue/month</li><li>Data licensing (Year 2+): EU's most granular SME food waste dataset</li></ul></div>
+    <div class="modal-section"><h4>The Vision</h4><p>Year 5 projection: 100,000 venues across the EU, €45M subscription ARR, €62M consumer marketplace GMV annually.</p></div>
+    <div class="modal-section"><h4>What I Learned</h4><p>Impact and revenue need to share the same sentence. Legitimacy is granular - one wrong number and a judge discounts everything else. Every stat in our deck was traced to a primary EU institutional source.</p></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-nexus" onclick="closeModalOnBg(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-nexus')">✕</button>
+    <h2>Nexus Irish Whiskey</h2>
+    <div class="modal-sub">ISCG × Accenture Competition · International Expansion Strategy</div>
+    <div class="modal-section"><h4>The Core Insight</h4><p>The community isn't a marketing channel - it's the competitive moat itself. Jameson has an €80M+ marketing budget. Nexus cannot win that game. We reframed the expansion question: instead of "which market has the most whiskey drinkers," we asked "which market has the most activatable community?"</p></div>
+    <div class="modal-section"><h4>Nexus OS (explained simply)</h4><p>The brand's operating system - three layers: a zero-party data intelligence backbone, the Nexus App as a co-ownership platform (not a punch card), and the Batch Passport. The psychological difference between "I have 450 reward points" and "I'm a Brand Council member who voted on this cask" is enormous.</p></div>
+    <div class="modal-section"><h4>The Batch Passport</h4><p>A QR code on every bottle. Scan it: full provenance story - grain harvest, distillation run, community vote that determined the finish, who named the batch, how many bottles produced. Every sip traceable to a community decision.</p></div>
+    <div class="modal-section"><h4>What I Learned</h4><p>In category-challenger brands built on community, the brand strategy should be the business strategy. When those two documents are separate, something has gone wrong in the thinking.</p></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-onus" onclick="closeModalOnBg(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-onus')">✕</button>
+    <h2>OnUs - Reward &amp; Loyalty App</h2>
+    <div class="modal-sub">Entrepreneurship Module · CTO Role · Working Prototype Built</div>
+    <div class="modal-section"><h4>The Insight</h4><p>The loyalty market had been solved vertically but never horizontally. Independent service businesses - gyms, salons, barbers, cafés - were entirely left out. OnUs: the first cross-category loyalty platform for lifestyle and appointment-based services.</p></div>
+    <div class="modal-section"><h4>My Role (CTO)</h4><p>Built a working prototype using AI-assisted development tools (Emergent and Lovable), hosted live via GitHub. Led competitive analysis across Squid, Magic Stamp, LoyLap, Teya, and Square. Built the five-year revenue model, break-even analysis, and DCF valuation from scratch.</p></div>
+    <div class="modal-section"><h4>Simply Explained</h4><p>One app replacing the pile of forgotten stamp cards in your wallet. Earn points at your barber, gym, nail salon, and café - all in one place. Tagline: Stop searching, start earning. It's OnUs.</p></div>
+    <div class="stat-row"><span class="stat-pill">Break-even Month 15</span><span class="stat-pill">€408K ARR at break-even</span><span class="stat-pill">28 Harvard citations</span></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-rsm" onclick="closeModalOnBg(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-rsm')">✕</button>
+    <h2>RSM Case Study Competition</h2>
+    <div class="modal-sub">Lead Consultant · 2nd Place out of 36 Teams · €400 Prize</div>
+    <div class="modal-section"><h4>The Challenge</h4><p>McGrath Consultancy Partnership: AI was commoditising the firm's core product - expert knowledge. Two major clients reduced scope due to internal AI units. Projected 9% revenue drop. Redefine the value proposition before proprietary knowledge loses all pricing power.</p></div>
+    <div class="modal-section"><h4>The Platform-Fortress Strategy</h4><p>The Platform: commercialising the internal "Atlas" AI into a subscription-based benchmarking tool - turning a cost centre into recurring revenue. The Fortress: elevating human consultants to focus exclusively on board-level judgment calls that AI cannot replicate.</p></div>
+    <div class="modal-section"><h4>The Atlas Vanguard Idea</h4><p>Faced with a €280M investment requirement, I proposed recruiting 6–8 Tier-1 clients to co-fund the build. In exchange: Vanguard pricing and a seat on the steering committee. Transformed a high-risk capital call into a market-validated product launch. Drawn directly from enterprise SaaS GTM playbooks.</p></div>
+    <div class="modal-section"><h4>The Judges' Verdict</h4><p>Specifically commended our "lateral thinking" - while most teams focused on internal restructuring, our external commercialisation approach and Design Partner model was described as a sophisticated, real-world solution to the Innovator's Dilemma.</p></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-sos" onclick="closeModalOnBg(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-sos')">✕</button>
+    <h2>SOS Cookies</h2>
+    <div class="modal-sub">Strategic Expansion &amp; Scaling · Dublin, Ireland</div>
+    <div class="modal-section"><h4>The Brief</h4><p>Identify precisely where, when, and how to strategically scale SOS Cookies across Ireland through kiosks, pop-ups, and permanent retail. Our team audited production capacity, staffing needs, and logistics.</p></div>
+    <div class="modal-section"><h4>The Core Insight</h4><p>Growth was bottlenecked by a production limit of 2,400 cookies daily. Strategy shifted from rapid expansion to growing smart - prioritising high-footfall Dublin locations to maximise current capacity before committing to major capital expenditure.</p></div>
+    <div class="modal-section"><h4>The Strategy</h4><p>Benchmarked against competitors including The Rolling Donut. Proposed product diversification: character cookies for kids, mini-bites for health-conscious adults. A smart marketing layer using AI tools for viral content generation.</p></div>
+    <div class="modal-section"><h4>The Roadmap (2025-2028)</h4><p>Short-term: Liffey Valley, Tallaght, UCD locations. Medium-term: Market entry into Cork and London. 2026 cap: 3-4 new locations max to protect quality and brand consistency.</p></div>
+    <div class="modal-section"><h4>What I Learned</h4><p>Operational structure is the prerequisite for creative innovation. You can have the most viral brand in the city, but without a documented supply chain and a Founder-to-Manager mindset, you cannot scale.</p></div>
+  </div>
+</div>
+
+<script>
+let vinylPlaying = false;
+function startVinyl(){
+  const disc = document.getElementById('vinyl-disc');
+  const arm = document.getElementById('tonearm');
+  if(disc && arm){
+    disc.style.animationPlayState = 'running';
+    arm.style.transform = 'rotate(-10deg)';
+    vinylPlaying = true;
+  }
+}
+const travelImgs=['t1.jpeg','t4.jpeg','t5.jpeg','t3.jpeg','t7.jpeg','t11.jpeg','t2.jpeg','t8.jpeg','t12.jpeg','t10.jpeg','t6.jpeg','t9.jpeg'];
+let lightIdx=0;
+function openLightbox(idx){lightIdx=idx;document.getElementById('lightbox-img').src=travelImgs[idx];const lb=document.getElementById('lightbox');lb.style.display='flex';document.body.style.overflow='hidden'}
+function closeLightbox(e){if(e.target===e.currentTarget||e.target.tagName==='IMG'===false){if(e.target.id==='lightbox'){document.getElementById('lightbox').style.display='none';document.body.style.overflow=''}}}
+function moveLight(dir){lightIdx=(lightIdx+dir+travelImgs.length)%travelImgs.length;document.getElementById('lightbox-img').src=travelImgs[lightIdx]}
+document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.travel-item').forEach((el,i)=>{el.addEventListener('click',()=>openLightbox(i))})});
+function openModal(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden'}
+function closeModal(id){document.getElementById(id).classList.remove('open');document.body.style.overflow=''}
+function closeModalOnBg(e){if(e.target===e.currentTarget){e.currentTarget.classList.remove('open');document.body.style.overflow=''}}
+function toggleStage(el){el.classList.toggle('open')}
+
+const sections=['hero','about','experience','education','projects','gtm','volunteering','art','travel','music'];
+const navLinks=document.querySelectorAll('.sidenav a');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      navLinks.forEach(l=>l.classList.remove('active'));
+      const link=document.querySelector(`.sidenav a[data-section="${e.target.id}"]`);
+      if(link)link.classList.add('active');
+    }
+  });
+},{threshold:0.3});
+sections.forEach(id=>{const el=document.getElementById(id);if(el)observer.observe(el)});
+navLinks.forEach(l=>{l.addEventListener('click',e=>{e.preventDefault();const id=l.dataset.section;document.getElementById(id)?.scrollIntoView({behavior:'smooth'})})});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.querySelectorAll('.modal-overlay.open').forEach(m=>{m.classList.remove('open');document.body.style.overflow=''})}});
+</script>
+</body>
+</html>
